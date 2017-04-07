@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/aden.css",
+	"sources": [
+		"../../sass/vendor/aden.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Aden\n *\n */\n\n@import 'shared';\n\n// mixin to extend aden filter\n// @mixin aden\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include aden;\n//   }\n//   or\n//   img {\n//     @include aden(blur(2px));\n//   }\n//   or\n//   img {\n//     @include aden(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin aden($filters...) {\n  @include filter-base;\n  filter: hue-rotate(-20deg) contrast(.9) saturate(.85) brightness(1.2) $filters;\n\n  &::after {\n    background: linear-gradient(to right, rgba(66, 10, 14, .2), transparent);\n    mix-blend-mode: darken;\n  }\n\n  @content;\n}\n\n// aden Instagram filter\n%aden,\n.aden {\n  @include aden;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAmCH,AAAA,KAAK,CAAC;EC3BJ,QAAQ,EAAE,QAAS;EDenB,MAAM,EAAE,kBAAU,CAAS,aAAQ,CAAK,cAAQ,CAAM,eAAU;CAcjE;;;;AAFD,ACzBE,KDyBG,CCzBH,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADsBH,AAAA,KAAK,ACpBF,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADiBH,AAAA,KAAK,ACfF,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADYH,AAAA,KAAK,AAVF,OAAO,CAAC;EACP,UAAU,EAAE,6DAAe;EAC3B,cAAc,EAAE,MAAO;CACxB",
+	"names": []
+}

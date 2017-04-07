@@ -1,0 +1,45 @@
+/*
+ *
+ * Toaster
+ *
+ */
+@import 'shared';
+
+// mixin to extend toaster filter
+// @mixin toaster
+// @param $filters... {filter} - Zero to many css filters to be added
+// @example
+//   img {
+//     @include toaster;
+//   }
+//   or
+//   img {
+//     @include toaster(blur(2px));
+//   }
+//   or
+//   img {
+//     @include toaster(blur(2px)) {
+//       /*...*/
+//     };
+//   }
+@mixin stevo($filters...) {
+  @include filter-base;
+  filter: contrast(1.5) brightness(.9) $filters;
+
+  img {
+    filter:grayscale(1);
+  }
+
+  &::after {
+    background: linear-gradient(-135deg, _palette(color5) , _palette(color3));
+    mix-blend-mode: overlay;
+  }
+
+  @content;
+}
+
+// toaster Instagram filter
+%stevo,
+.stevo {
+  @include stevo;
+}

@@ -1,0 +1,68 @@
+/*
+ * betterish
+ *
+ */
+/* line 47, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/betterish.scss */
+
+.betterish {
+  position: relative;
+  background-color: transparent !important;
+  filter: contrast(0.8) brightness(1.1);
+}
+
+/* line 15, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/_shared.scss */
+
+.betterish img {
+  width: 100%;
+  z-index: 1;
+}
+
+/* line 20, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/_shared.scss */
+
+.betterish:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* line 25, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/_shared.scss */
+
+.betterish:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* line 29, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/betterish.scss */
+
+.betterish img {
+  filter: grayscale(1);
+}
+
+/* line 33, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/betterish.scss */
+
+.betterish::before {
+  background: _palette(color2);
+  mix-blend-mode: soft-light;
+}
+
+/* line 38, /Users/stevo/Sites/smledbetter/src/assets/sass/vendor/betterish.scss */
+
+.betterish::after {
+  background: _palette(color1);
+  mix-blend-mode: lighten;
+}
+
+/*# sourceMappingURL=../../css/vendor/betterish.map */

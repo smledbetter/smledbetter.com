@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/inkwell.css",
+	"sources": [
+		"../../sass/vendor/inkwell.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Inkwell\n *\n */\n@import 'shared';\n\n// mixin to extend inkwell filter\n// @mixin inkwell\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include inkwell;\n//   }\n//   or\n//   img {\n//     @include inkwell(blur(2px));\n//   }\n//   or\n//   img {\n//     @include inkwell(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin inkwell($filters...) {\n  @include filter-base;\n  filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(1) $filters;\n\n  @content;\n}\n\n// inkwell Instagram filter\n%inkwell,\n.inkwell {\n  @include inkwell;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AA6BH,AAAA,QAAQ,CAAC;ECrBP,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,UAAK,CAAK,aAAQ,CAAM,eAAU,CAAM,YAAS;CAS1D;;;;AAFD,ACnBE,QDmBM,CCnBN,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADgBH,AAAA,QAAQ,ACdL,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADWH,AAAA,QAAQ,ACTL,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ",
+	"names": []
+}

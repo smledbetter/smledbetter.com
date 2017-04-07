@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/maven.css",
+	"sources": [
+		"../../sass/vendor/maven.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Maven\n *\n */\n\n@import 'shared';\n\n// mixin to extend maven filter\n// @mixin maven\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include maven;\n//   }\n//   or\n//   img {\n//     @include maven(blur(2px));\n//   }\n//   or\n//   img {\n//     @include maven(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n\n@mixin maven($filters...) {\n  @include filter-base;\n  filter: sepia(.25) brightness(.95) contrast(.95) saturate(1.5) $filters;\n\n  &:after{\n    background: rgba(3, 230, 26, .20);\n    mix-blend-mode: hue;\n  }\n\n  @content;\n}\n\n// maven Instagram filter\n%maven,\n.maven {\n  @include maven;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAoCH,AAAA,MAAM,CAAC;EC5BL,QAAQ,EAAE,QAAS;EDgBnB,MAAM,EAAE,WAAK,CAAM,gBAAU,CAAM,cAAQ,CAAM,aAAQ;CAc1D;;;;AAFD,AC1BE,MD0BI,CC1BJ,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADuBH,AAAA,MAAM,ACrBH,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADkBH,AAAA,MAAM,AChBH,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADaH,AAAA,MAAM,AAVH,MAAM,CAAA;EACL,UAAU,EAAE,qBAAI;EAChB,cAAc,EAAE,GAAI;CACrB",
+	"names": []
+}

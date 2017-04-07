@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/willow.css",
+	"sources": [
+		"../../sass/vendor/willow.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n * Willow\n *\n */\n@import 'shared';\n\n// mixin to extend willow filter\n// @mixin willow\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include willow;\n//   }\n//   or\n//   img {\n//     @include willow(blur(2px));\n//   }\n//   or\n//   img {\n//     @include willow(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin willow($filters...) {\n  @include filter-base;\n  filter: grayscale(.5) contrast(.95) brightness(.9) $filters;\n\n  &::before {\n    background-color: radial-gradient(40%, circle, rgb(212, 169, 175) 55%, black 150%);\n    mix-blend-mode: overlay;\n  }\n\n  &::after {\n    background-color: rgb(216, 205, 203);\n    mix-blend-mode: color;\n  }\n\n  @content;\n}\n\n// willow Instagram filter\n%willow,\n.willow {\n  @include willow;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;GAGG;;;AAuCH,AAAA,OAAO,CAAC;EC9BN,QAAQ,EAAE,QAAS;EDanB,MAAM,EAAE,cAAS,CAAK,cAAQ,CAAM,eAAU;CAmB/C;;;;AAFD,AC5BE,OD4BK,CC5BL,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADyBH,AAAA,OAAO,ACvBJ,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADoBH,AAAA,OAAO,AClBJ,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADeH,AAAA,OAAO,AAfJ,QAAQ,CAAC;EACR,gBAAgB,EAAE,qDAAe;EACjC,cAAc,EAAE,OAAQ;CACzB;;;;AAYH,AAAA,OAAO,AAVJ,OAAO,CAAC;EACP,gBAAgB,EAAE,OAAG;EACrB,cAAc,EAAE,KAAM;CACvB",
+	"names": []
+}
