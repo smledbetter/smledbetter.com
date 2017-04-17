@@ -210,6 +210,15 @@
 			border-top-width: _size(border-width);
 		}
 
+			 a {
+				 border-bottom: 0;
+			 > .inner > section > .icon, p {
+					color: _palette(fg);
+				}
+				}
+
+
+
 		// Modifiers.
 
 			// Size.

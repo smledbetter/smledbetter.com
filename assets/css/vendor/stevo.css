@@ -1,1 +1,53 @@
-.stevo{position:relative;filter:contrast(1.5) brightness(0.9)}.stevo img{width:100%;z-index:1}.stevo:before{content:'';display:block;height:100%;width:100%;top:0;left:0;position:absolute;pointer-events:none;z-index:2}.stevo:after{content:'';display:block;height:100%;width:100%;top:0;left:0;position:absolute;pointer-events:none;z-index:3}.stevo img{filter:grayscale(1)}.stevo::after{background:linear-gradient(-135deg, _palette(color5), _palette(color3));mix-blend-mode:overlay}
+/*
+ *
+ * Toaster
+ *
+ */
+
+.stevo {
+  position: relative;
+  filter: contrast(1.5) brightness(0.9);
+}
+
+
+.stevo img {
+  width: 100%;
+  z-index: 1;
+}
+
+
+.stevo:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.stevo:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+.stevo img {
+  filter: grayscale(1);
+}
+
+
+.stevo::after {
+  background: linear-gradient(-135deg, _palette(color5), _palette(color3));
+  mix-blend-mode: overlay;
+}
