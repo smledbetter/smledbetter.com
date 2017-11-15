@@ -7,13 +7,13 @@ NICKNAME:Stevo
 GENDER:M
 BDAY:1982-09-20
 TITLE:CEO
-ORG:betterish;
+ORG:Habitry;
 item1.URL;type=INTERNET,type=HOME:https://smledbetter.com
 item1.X-ABLabel:home page
-item2.URL;type=INTERNET;type=WORK:http://betterish.co
+item2.URL;type=INTERNET;type=WORK:https://habitry.com
 item2.X-ABLabel:website
 EMAIL;type=INTERNET;type=HOME;type=pref:stevo@smledbetter.com
-EMAIL;type=INTERNET;type=WORK:stevo@betterish.co
+EMAIL;type=INTERNET;type=WORK:stevo@habitry.com
 X-SOCIALPROFILE;type=facebook:http://facebook.com/smledbetter
 X-FACEBOOK:smledbetter
 X-SOCIALPROFILE;type=twitter:http://twitter.com/smledbetter
