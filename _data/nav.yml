@@ -1,0 +1,6 @@
+# pages to appear in navivation
+- title: Bio
+  path: /bio
+
+- title: Contact
+  path: /contact

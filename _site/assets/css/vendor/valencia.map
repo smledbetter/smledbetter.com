@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/valencia.css",
+	"sources": [
+		"../../sass/vendor/valencia.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Valencia\n *\n */\n@import 'shared';\n\n// mixin to extend valencia filter\n// @mixin valencia\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include valencia;\n//   }\n//   or\n//   img {\n//     @include valencia(blur(2px));\n//   }\n//   or\n//   img {\n//     @include valencia(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin valencia($filters...) {\n  @include filter-base;\n  filter: contrast(1.08) brightness(1.08) sepia(0.08) $filters;\n\n  &::after {\n    background: rgb(58, 3, 57);\n    mix-blend-mode: exclusion;\n    opacity: .5;\n  }\n\n  @content;\n}\n\n// valencia Instagram filter\n%valencia,\n.valencia {\n  @include valencia;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAmCH,AAAA,SAAS,CAAC;EC3BR,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,cAAQ,CAAO,gBAAU,CAAO,WAAK;CAe9C;;;;AAFD,ACzBE,SDyBO,CCzBP,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADsBH,AAAA,SAAS,ACpBN,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADiBH,AAAA,SAAS,ACfN,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADYH,AAAA,SAAS,AAXN,OAAO,CAAC;EACP,UAAU,EAAE,OAAG;EACf,cAAc,EAAE,SAAU;EAC1B,OAAO,EAAE,EAAG;CACb",
+	"names": []
+}

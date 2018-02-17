@@ -25,7 +25,7 @@
 				&.on#{$event}-fade-in {
 					> * {
 						> .inner {
-							@include vendor('transition', 'opacity #{$y} #{_ease(plastic)}');
+							@include vendor('transition', 'opacity #{$y} ease-in-out');
 							@include vendor('transition-delay', '#{_misc(items-limit) * _duration(items-delay)}');
 						}
 
@@ -53,6 +53,13 @@
 
 		// On Scroll.
 			@include transition-items('scroll');
+
+			a {
+							 border-bottom: 0;
+						 > .inner > section > .icon, p {
+								color: _palette(fg);
+							}
+							}
 
 	}
 
@@ -209,15 +216,6 @@
 			border-left-width: _size(border-width);
 			border-top-width: _size(border-width);
 		}
-
-			 a {
-				 border-bottom: 0;
-			 > .inner > section > .icon, p {
-					color: _palette(fg);
-				}
-				}
-
-
 
 		// Modifiers.
 

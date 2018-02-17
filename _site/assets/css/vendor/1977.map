@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/1977.css",
+	"sources": [
+		"../../sass/vendor/1977.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n * 1977\n *\n */\n@import 'shared';\n\n// mixin to extend 1977 filter\n// @mixin _1977\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include _1977;\n//   }\n//   or\n//   img {\n//     @include _1977(blur(2px));\n//   }\n//   or\n//   img {\n//     @include _1977(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin _1977($filters...) {\n  @include filter-base;\n  filter: contrast(1.1) brightness(1.1) saturate(1.3) $filters;\n\n  &:after{\n    background: rgba(243, 106, 188, .3);\n    mix-blend-mode: screen;\n  }\n  @content;\n}\n\n// 1977 Instagram filter\n%_1977,\n._1977 {\n  @include _1977;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;GAGG;;;AAiCH,AAAA,MAAM,CAAC;ECxBL,QAAQ,EAAE,QAAS;EDanB,MAAM,EAAE,aAAQ,CAAM,eAAU,CAAM,aAAQ;CAa/C;;;;AAFD,ACtBE,MDsBI,CCtBJ,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADmBH,AAAA,MAAM,ACjBH,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADcH,AAAA,MAAM,ACZH,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADSH,AAAA,MAAM,AATH,MAAM,CAAA;EACL,UAAU,EAAE,wBAAI;EAChB,cAAc,EAAE,MAAO;CACxB",
+	"names": []
+}

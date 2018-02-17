@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/clarendon.css",
+	"sources": [
+		"../../sass/vendor/clarendon.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n * Clarendon\n *\n */\n@import 'shared';\n\n// mixin to extend clarendon filter\n// @mixin clarendon\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include clarendon;\n//   }\n//   or\n//   img {\n//     @include clarendon(blur(2px));\n//   }\n//   or\n//   img {\n//     @include clarendon(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin clarendon($filters...) {\n  @include filter-base;\n  filter: contrast(1.2) saturate(1.35) $filters;\n\n  &:before {\n    background: rgba(127, 187, 227, .2);\n    mix-blend-mode: overlay;\n  }\n\n  @content;\n}\n\n// clarendon Instagram filter\n%clarendon,\n.clarendon {\n  @include clarendon;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;GAGG;;;AAkCH,AAAA,UAAU,CAAC;ECzBT,QAAQ,EAAE,QAAS;EDanB,MAAM,EAAE,aAAQ,CAAM,cAAQ;CAc/B;;;;AAFD,ACvBE,UDuBQ,CCvBR,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADoBH,AAAA,UAAU,AClBP,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADeH,AAAA,UAAU,ACbP,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADUH,AAAA,UAAU,AAVP,OAAO,CAAC;EACP,UAAU,EAAE,wBAAI;EAChB,cAAc,EAAE,OAAQ;CACzB",
+	"names": []
+}

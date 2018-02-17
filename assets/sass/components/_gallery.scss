@@ -181,9 +181,51 @@
 		// Modifiers.
 
 			// size
+			&.xsmall {
+				article {
+					width: 15%;
+					padding:1.5em;
+
+					.caption {
+						padding: 1rem;
+					}
+				}
+
+				@include breakpoint(large) {
+					article {
+						width: 25%;
+
+						.caption {
+							padding: 1rem;
+						}
+					}
+				}
+
+				@include breakpoint(medium) {
+					article {
+						width: (100% / 3);
+
+						.caption {
+							padding: 1rem;
+						}
+					}
+				}
+
+				@include breakpoint(xsmall) {
+					article {
+						width: 50%;
+
+						.caption {
+							padding: 1rem;
+						}
+					}
+				}
+			}
+
 				&.small {
 					article {
 						width: 20%;
+						padding:1em;
 
 						.caption {
 							padding: 1rem;
@@ -311,7 +353,7 @@
 			background-image: linear-gradient(to left, rgba(0,0,0,0.25) 15%, rgba(0,0,0,0));
 
 			&:before {
-				content: '\f105';
+				font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f105";
 				right: 0;
 			}
 		}
@@ -321,7 +363,7 @@
 			background-image: linear-gradient(to right, rgba(0,0,0,0.25) 15%, rgba(0,0,0,0));
 
 			&:before {
-				content: '\f104';
+				font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f104";
 				left: 0;
 			}
 		}
@@ -607,7 +649,7 @@
 		.gallery {
 			article {
 				.image {
-					background-color: transparentize(_palette($p, fg-bold), 0.875);
+					background-color: _palette($p, transparant);
 				}
 			}
 		}
