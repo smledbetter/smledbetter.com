@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/nashville.css",
+	"sources": [
+		"../../sass/vendor/nashville.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Nashville\n *\n */\n@import 'shared';\n\n// mixin to extend nashville filter\n// @mixin nashville\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include nashville;\n//   }\n//   or\n//   img {\n//     @include nashville(blur(2px));\n//   }\n//   or\n//   img {\n//     @include nashville(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin nashville($filters...) {\n  @include filter-base;\n  filter: sepia(.2) contrast(1.2) brightness(1.05) saturate(1.2) $filters;\n\n  &::after {\n    background: rgba(0, 70, 150, .4);\n    mix-blend-mode: lighten;\n  }\n\n  &::before {\n    background: rgba(247, 176, 153, .56);\n    mix-blend-mode: darken;\n  }\n\n  @content;\n}\n\n// nashville Instagram filter\n%nashville,\n.nashville {\n  @include nashville;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAuCH,AAAA,UAAU,CAAC;EC/BT,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,UAAK,CAAK,aAAQ,CAAM,gBAAU,CAAO,aAAQ;CAmB1D;;;;AAFD,AC7BE,UD6BQ,CC7BR,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;AD0BH,AAAA,UAAU,ACxBP,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADqBH,AAAA,UAAU,ACnBP,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADgBH,AAAA,UAAU,AAfP,OAAO,CAAC;EACP,UAAU,EAAE,qBAAI;EAChB,cAAc,EAAE,OAAQ;CACzB;;;;AAYH,AAAA,UAAU,AAVP,QAAQ,CAAC;EACR,UAAU,EAAE,yBAAI;EAChB,cAAc,EAAE,MAAO;CACxB",
+	"names": []
+}

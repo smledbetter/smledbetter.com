@@ -47,7 +47,6 @@
 			img {
 				width: 100%;
 			}
-
 		}
 
 		&.main {
@@ -58,14 +57,6 @@
 			img {
 				width: 100%;
 			}
-		}
-
-		&.stevo {
-			@include stevo();
-		}
-
-		&.moon {
-			@include moon();
 		}
 
 	}

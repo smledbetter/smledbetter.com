@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/lofi.css",
+	"sources": [
+		"../../sass/vendor/lofi.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n * Lo-fi\n *\n */\n@import 'shared';\n\n// mixin to extend lofi filter\n// @mixin lofi\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include lofi;\n//   }\n//   or\n//   img {\n//     @include lofi(blur(2px));\n//   }\n//   or\n//   img {\n//     @include lofi(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin lofi($filters...) {\n  @include filter-base;\n  filter: saturate(1.1) contrast(1.5) $filters;\n\n  &::after {\n    background: radial-gradient(circle, transparent 70%, rgb(34, 34, 34) 150%);\n    mix-blend-mode: multiply;\n  }\n\n  @content;\n}\n\n// lofi Instagram filter\n%lofi,\n.lofi {\n  @include lofi;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;GAGG;;;AAkCH,AAAA,KAAK,CAAC;ECzBJ,QAAQ,EAAE,QAAS;EDanB,MAAM,EAAE,aAAQ,CAAM,aAAQ;CAc/B;;;;AAFD,ACvBE,KDuBG,CCvBH,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADoBH,AAAA,KAAK,AClBF,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADeH,AAAA,KAAK,ACbF,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADUH,AAAA,KAAK,AAVF,OAAO,CAAC;EACP,UAAU,EAAE,sDAAe;EAC3B,cAAc,EAAE,QAAS;CAC1B",
+	"names": []
+}

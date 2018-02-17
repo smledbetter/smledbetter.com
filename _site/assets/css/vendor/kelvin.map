@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/kelvin.css",
+	"sources": [
+		"../../sass/vendor/kelvin.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n * Kelvin\n *\n */\n@import 'shared';\n\n// mixin to extend kelvin filter\n// @mixin kelvin\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include kelvin;\n//   }\n//   or\n//   img {\n//     @include kelvin(blur(2px));\n//   }\n//   or\n//   img {\n//     @include kelvin(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin kelvin($filters...) {\n  @include filter-base;\n\n  @if length($filters) > 0 {\n    filter: $filters;\n  }\n\n  &::after{\n    background: rgb(183, 125, 33);\n    mix-blend-mode: overlay;\n  }\n\n  &::before {\n    background: rgb(56, 44, 52);\n    mix-blend-mode: color-dodge;\n  }\n\n  @content;\n}\n\n// kelvin Instagram filter\n%kelvin,\n.kelvin {\n  @include kelvin;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;GAGG;;;AA0CH,AAAA,OAAO,CAAC;ECjCN,QAAQ,EAAE,QAAS;CDmCpB;;;;AAFD,AC/BE,OD+BK,CC/BL,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;AD4BH,AAAA,OAAO,AC1BJ,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADuBH,AAAA,OAAO,ACrBJ,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADkBH,AAAA,OAAO,AAfJ,OAAO,CAAA;EACN,UAAU,EAAE,OAAG;EACf,cAAc,EAAE,OAAQ;CACzB;;;;AAYH,AAAA,OAAO,AAVJ,QAAQ,CAAC;EACR,UAAU,EAAE,OAAG;EACf,cAAc,EAAE,WAAY;CAC7B",
+	"names": []
+}

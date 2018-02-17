@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/moon.css",
+	"sources": [
+		"../../sass/vendor/moon.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n * Moon\n *\n */\n@import 'shared';\n\n// mixin to extend moon filter\n// @mixin moon\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include moon;\n//   }\n//   or\n//   img {\n//     @include moon(blur(2px));\n//   }\n//   or\n//   img {\n//     @include moon(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin moon($filters...) {\n  @include filter-base;\n  filter: grayscale(1) contrast(1.1) brightness(1.1) $filters;\n\n  &::before {\n    background: rgb(160, 160, 160);\n    mix-blend-mode: soft-light;\n  }\n\n  &::after {\n    background: rgb(56, 56, 56);\n    mix-blend-mode: lighten;\n  }\n\n  @content;\n}\n\n// moon Instagram filter\n%moon,\n.moon {\n  @include moon;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;GAGG;;;AAuCH,AAAA,KAAK,CAAC;EC9BJ,QAAQ,EAAE,QAAS;EDanB,MAAM,EAAE,YAAS,CAAI,aAAQ,CAAM,eAAU;CAmB9C;;;;AAFD,AC5BE,KD4BG,CC5BH,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADyBH,AAAA,KAAK,ACvBF,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADoBH,AAAA,KAAK,AClBF,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADeH,AAAA,KAAK,AAfF,QAAQ,CAAC;EACR,UAAU,EAAE,OAAG;EACf,cAAc,EAAE,UAAW;CAC5B;;;;AAYH,AAAA,KAAK,AAVF,OAAO,CAAC;EACP,UAAU,EAAE,OAAG;EACf,cAAc,EAAE,OAAQ;CACzB",
+	"names": []
+}

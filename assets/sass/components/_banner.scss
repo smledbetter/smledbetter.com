@@ -90,23 +90,27 @@
 					&.on#{$event}-content-fade-in {
 						.content {
 							@include vendor('transition', 'opacity #{$y} ease-in-out');
-
-							.icons li {
-								@include unroll;
-
-							}
 						}
 
 						#{$x} {
 							.content {
 								opacity: 0;
-
-								.icons li {
-										opacity: 0;
-								}
 							}
 						}
 					}
+
+					&.on#{$event}-content-fade-in-stages {
+						.content * {
+							@include transition-stages;
+						}
+
+						#{$x} {
+							.content *:not(.opaque) {
+								opacity: 0;
+							}
+						}
+					}
+
 
 				// Image.
 					&.on#{$event}-image-fade-up {
@@ -179,7 +183,6 @@
 
 								img {
 									opacity: 0;
-
 								}
 							}
 						}
@@ -196,7 +199,6 @@
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
 								@include vendor('transition-delay', '#{$y * 0.75}');
 							}
-
 						}
 
 						#{$x} {
@@ -206,108 +208,43 @@
 
 								img {
 									opacity: 0;
-										}
+								}
+							}
+						}
+					}
+
+					&.on#{$event}-image-fade-in-slow {
+						.image {
+							img {
+								@include vendor('transition', 'opacity #{$y * 2} ease-in-out #{$y * 2}');
+							}
+							&:after {
+								@include vendor('transition', 'opacity #{$y * 2} ease-in-out #{$y - $y}');
+							}
+						}
+
+						#{$x} {
+							.image {
+								img {
+									opacity: 0;
+								}
+								&:after {
+									opacity: 0;
+								}
 							}
 						}
 					}
 
 					&.on#{$event}-image-fade-in {
 						.image {
-							img, {
-								@include vendor('transition', 'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)');
-							}
-
-							&::before, {
-								@include vendor('transition', 'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)');
-								@include vendor('transition-delay', '#{$y * 0.15}');
-							}
-							&::after, {
-								@include vendor('transition', 'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)');
-								@include vendor('transition-delay', '#{$y * 0.15}');
-							}
-						}
-
-						#{$x} {
-							.image {
-								img {
-									opacity: 0;
-								}
-								&::before {
-									opacity: 0;
-								}
-								&::after {
-									opacity: 0;
-								}
-							}
-						}
-					}
-
-					&.on#{$event}-image-slide-left {
-						.image {
-							@include vendor('transition', (
-								'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)',
-								'transform #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86) #{$y * 0.75}'
-							));
-
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
-								@include vendor('transition-delay', '#{$y * 0.75}');
 							}
 						}
 
 						#{$x} {
 							.image {
-								@include vendor('transform', 'translateX(77rem)');
-								opacity: 1;
-
 								img {
-									opacity: 1;
-								}
-							}
-						}
-					}
-
-					&.on#{$event}-image-slide-down {
-						.image {
-							@include vendor('transition', (
-								'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)',
-								'transform #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86) #{$y * 0.75}'
-							));
-
-							img {
-								@include vendor('transition', 'opacity #{$y} ease-in-out');
-								@include vendor('transition-delay', '#{$y * 0.75}');
-							}
-						}
-
-						#{$x} {
-							.image {
-								@include vendor('transform', 'translateY(-77rem)');
-								opacity: 1;
-
-								img {
-									opacity: 1;
-								}
-							}
-						}
-					}
-
-					&.on#{$event}-image-color-fade {
-						.image {
-							&::before {
-								@include vendor('transition', 'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)');
-							}
-							&::after {
-								@include vendor('transition', 'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)');
-							}
-						}
-
-						#{$x} {
-							.image {
-								&::before {
-									opacity: 0;
-								}
-								&::after {
 									opacity: 0;
 								}
 							}
@@ -322,10 +259,6 @@
 		// On Scroll.
 			@include transition-banner('scroll');
 
-	}
-
-	.arrow > a {
-		border-bottom: none !important;
 	}
 
 /* Banner (style1) */
@@ -444,6 +377,7 @@
 			// Content Alignment.
 				&.content-align-left {
 					// ...
+
 				}
 
 				&.content-align-center {
@@ -662,14 +596,6 @@
 			height: $image-size;
 			border-radius: 100%;
 			margin: 0 (_size(element-margin) * 1.75) _size(element-margin) 0;
-
-			&::before {
-				border-radius: 100%;
-			}
-
-			&::after {
-				border-radius: 100%;
-			}
 
 			img {
 				@include vendor('object-fit', 'cover');
@@ -979,6 +905,7 @@
 			}
 		}
 
+
 		@include breakpoint(xlarge) {
 			@include padding(_size(padding, xlarge), _size(padding, xlarge));
 		}
@@ -1002,6 +929,14 @@
 					min-height: 100vh;
 				}
 
+				&.mostscreen {
+					min-height: 75vh;
+				}
+
+				&.halfscreen {
+					min-height: 50vh;
+				}
+
 			// Content Alignment.
 				&.content-align-left {
 					text-align: left;
@@ -1014,6 +949,7 @@
 				&.content-align-right {
 					text-align: right;
 				}
+
 
 			// Image Position.
 				&.image-position-left {
@@ -1028,13 +964,6 @@
 					// ...
 				}
 
-				&.image-position-bottom {
-					.image {
-						img {
-							@include vendor('object-position', 'bottom');
-						}
-					}				}
-
 				&.image-position-right {
 					.image {
 						img {
@@ -1045,177 +974,12 @@
 
 	}
 
-	/* Banner (style6) */
-
-		.banner.style6 {
-			$image-size: 24rem;
-			$content-size: (_size(inner) * 0.875) - $image-size - (_size(element-margin) * 1.75);
-
-			@include padding(_size(padding, default), _size(padding, default));
-			@include vendor('align-items', 'center');
-			@include vendor('display', 'flex');
-			@include vendor('flex-direction', 'row-reverse');
-			@include vendor('justify-content', 'center');
-			position: relative;
-			text-align: left;
-			overflow-x: hidden;
-
-			.content {
-				width: $content-size;
-				max-width: 100%;
-			}
-
-			.image {
-				@include vendor('flex-grow', '0');
-				@include vendor('flex-shrink', '0');
-				width: $image-size;
-				height: $image-size;
-				border-radius: 100%;
-				margin: 0 (_size(element-margin) * 1.75) _size(element-margin) 0;
-				background-color: transparent;
-
-				&::before {
-					-webkit-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-				}
-
-				&::after {
-					-webkit-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-				}
-
-
-				img {
-					@include vendor('object-fit', 'cover');
-					@include vendor('object-position', 'center');
-					display: block;
-					width: 100%;
-					height: 100%;
-					-webkit-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-					clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-				}
-			}
-
-			@include breakpoint(xlarge) {
-				@include padding(_size(padding, xlarge), _size(padding, xlarge));
-			}
-
-			@include breakpoint(large) {
-				@include padding(_size(padding, large), _size(padding, large));
-			}
-
-			@include breakpoint(medium) {
-				@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
-
-				.image {
-					width: ($image-size * 0.875);
-					height: ($image-size * 0.875);
-				}
-			}
-
-			@include breakpoint(small) {
-				@include padding(_size(padding, small) * 1.25, _size(padding, small));
-				@include vendor('align-items', 'flex-start');
-
-				.image {
-					width: ($image-size * 0.75);
-					height: ($image-size * 0.75);
-					margin: 0 (_size(element-margin) * 1) _size(element-margin) 0;
-				}
-			}
-
-			@include orientation(portrait) {
-				@include vendor('align-items', 'center');
-				@include vendor('flex-direction', 'column-reverse');
-				text-align: center;
-
-				.content {
-					width: 34rem;
-					max-width: 100%;
-				}
-
-				.image {
-					margin-right: 0;
-				}
-			}
-
-			// Modifiers.
-
-				// Size.
-					&.fullscreen {
-						min-height: 100vh;
-					}
-
-				// Orientation.
-					&.orient-left {
-						@include vendor('flex-direction', 'row');
-
-						.image {
-							margin: 0 0 _size(element-margin) (_size(element-margin) * 1.75);
-						}
-
-						@include breakpoint(small) {
-							.image {
-								margin: 0 0 _size(element-margin) (_size(element-margin) * 1);
-							}
-						}
-
-						@include orientation(portrait) {
-							@include vendor('flex-direction', 'column-reverse');
-
-							.image {
-								margin-left: 0;
-							}
-						}
-					}
-
-					&.orient-right {
-						// ...
-					}
-
-				// Content Alignment.
-					&.content-align-left {
-						// ...
-					}
-
-					&.content-align-center {
-						text-align: center;
-					}
-
-					&.content-align-right {
-						text-align: right;
-					}
-
-				// Image Position.
-					&.image-position-left {
-						.image {
-							img {
-								@include vendor('object-position', 'left');
-							}
-						}
-					}
-
-					&.image-position-center {
-						// ...
-					}
-
-					&.image-position-right {
-						.image {
-							img {
-								@include vendor('object-position', 'right');
-							}
-						}
-					}
-
-		}
-
-
 // Mixin
 
 	@mixin color-banner($p: null) {
 		.banner {
 			.image {
-				background-color: transparentize(_palette($p, fg-bold), 1);
+				background-color: transparentize(_palette($p, fg-bold), 0.875);
 			}
 
 			@if ($p != 'invert') {
