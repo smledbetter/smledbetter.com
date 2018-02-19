@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/mayfair.css",
+	"sources": [
+		"../../sass/vendor/mayfair.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Mayfair\n *\n */\n@import 'shared';\n\n// mixin to extend mayfair filter\n// @mixin mayfair\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include mayfair;\n//   }\n//   or\n//   img {\n//     @include mayfair(blur(2px));\n//   }\n//   or\n//   img {\n//     @include mayfair(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin mayfair($filters...) {\n  @include filter-base;\n  filter: contrast(1.1) saturate(1.1) $filters;\n\n  &::after {\n    background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, .8), rgba(255, 200, 200, .6), rgb(17, 17, 17) 60%);\n    mix-blend-mode: overlay;\n    opacity: .4;\n  }\n\n  @content;\n}\n\n// mayfair Instagram filter\n%mayfair,\n.mayfair {\n  @include mayfair;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAmCH,AAAA,QAAQ,CAAC;EC3BP,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,aAAQ,CAAM,aAAQ;CAe/B;;;;AAFD,ACzBE,QDyBM,CCzBN,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADsBH,AAAA,QAAQ,ACpBL,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADiBH,AAAA,QAAQ,ACfL,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADYH,AAAA,QAAQ,AAXL,OAAO,CAAC;EACP,UAAU,EAAE,mGAAe;EAC3B,cAAc,EAAE,OAAQ;EACxB,OAAO,EAAE,EAAG;CACb",
+	"names": []
+}

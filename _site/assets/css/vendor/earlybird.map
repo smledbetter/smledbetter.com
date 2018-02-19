@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/earlybird.css",
+	"sources": [
+		"../../sass/vendor/earlybird.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Earlybird\n *\n */\n@import 'shared';\n\n// mixin to extend earlybird filter\n// @mixin earlybird\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include earlybird;\n//   }\n//   or\n//   img {\n//     @include earlybird(blur(2px));\n//   }\n//   or\n//   img {\n//     @include earlybird(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin earlybird($filters...) {\n  @include filter-base;\n  filter: contrast(.9) sepia(.2) $filters;\n\n  &::after {\n    background: radial-gradient(circle, rgb(208, 186, 142) 20%, rgb(54, 3, 9) 85%, rgb(29, 2, 16) 100%);\n    mix-blend-mode: overlay;\n  }\n\n  @content;\n}\n\n// earlybird Instagram filter\n%earlybird,\n.earlybird {\n  @include earlybird;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAkCH,AAAA,UAAU,CAAC;EC1BT,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,aAAQ,CAAK,UAAK;CAc3B;;;;AAFD,ACxBE,UDwBQ,CCxBR,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADqBH,AAAA,UAAU,ACnBP,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADgBH,AAAA,UAAU,ACdP,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADWH,AAAA,UAAU,AAVP,OAAO,CAAC;EACP,UAAU,EAAE,+DAAe;EAC3B,cAAc,EAAE,OAAQ;CACzB",
+	"names": []
+}

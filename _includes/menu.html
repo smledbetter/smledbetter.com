@@ -1,0 +1,12 @@
+<!-- Nav -->
+<nav class="main-nav">
+  <ul>
+  <li><a href="/">Home</a></li>
+    {% for item in site.data.nav %}
+  <li><a href="{{ item.path }}">{{ item.title }}</a></li>
+  {% endfor %}
+  </ul>
+<a href="#" class="main-nav-trigger is-visible">
+  <i class="icon icon--burger"></i>
+</a>
+</nav>

@@ -99,32 +99,6 @@
 						}
 					}
 
-					&.on#{$event}-content-slide-left {
-						background-color: _palette(invert, bg);
-						@include vendor('transition', (
-							'all cubic-bezier(0.785, 0.135, 0.15, 0.86)'
-						));
-
-						.content {
-							background-color: _palette(bg);
-							@include vendor('transition', (
-								'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86) #{$y * 0.75}',
-								'transform #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)'
-							));
-						}
-
-						#{$x} {
-							@include vendor('transition', (
-								'all cubic-bezier(0.785, 0.135, 0.15, 0.86)'
-							));
-
-							.content {
-								@include vendor('transform', 'translateX(-75rem)');
-								opacity: 1;
-							}
-						}
-					}
-
 				// Image.
 					&.on#{$event}-image-fade-up {
 						.image {
@@ -132,6 +106,7 @@
 								'opacity #{$y} ease-in-out',
 								'transform #{$y} ease-in-out'
 							));
+							@include vendor('transition-delay', '#{$y * 0.75}');
 
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
@@ -157,7 +132,7 @@
 								'opacity #{$y} ease-in-out',
 								'transform #{$y} ease-in-out'
 							));
-
+							@include vendor('transition-delay', '#{$y * 0.75}');
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
 								@include vendor('transition-delay', '#{$y * 0.75}');
@@ -182,7 +157,7 @@
 								'opacity #{$y} ease-in-out',
 								'transform #{$y} ease-in-out'
 							));
-
+							@include vendor('transition-delay', '#{$y * 0.75}');
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
 								@include vendor('transition-delay', '#{$y * 0.75}');
@@ -207,7 +182,7 @@
 								'opacity #{$y} ease-in-out',
 								'transform #{$y} ease-in-out'
 							));
-
+							@include vendor('transition-delay', '#{$y * 0.75}');
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
 								@include vendor('transition-delay', '#{$y * 0.75}');
@@ -242,64 +217,66 @@
 						}
 					}
 
-					&.on#{$event}-image-slide-left {
-						.image {
-							@include vendor('transition', (
-								'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)',
-								'transform #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86) #{$y * 0.75}'
-							));
-
-							img {
-								@include vendor('transition', 'opacity #{$y} ease-in-out');
-								@include vendor('transition-delay', '#{$y * 0.75}');
-							}
-						}
-
-						#{$x} {
-							.image {
-								@include vendor('transform', 'translateX(-25rem)');
-								opacity: 1;
-
-								img {
-									opacity: 1;
-								}
-							}
-						}
-					}
-
-					&.on#{$event}-image-slide-right {
-						.image {
-							@include vendor('transition', (
-								'opacity #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)',
-								'transform #{$y} cubic-bezier(0.785, 0.135, 0.15, 0.86)'
-							));
-
-							img {
-								@include vendor('transition', 'opacity #{$y} ease-in-out');
-								@include vendor('transition-delay', '#{$y * 0.75}');
-							}
-						}
-
-						#{$x} {
-							.image {
-								@include vendor('transition-delay', '#{$y * 0.75}');
-								@include vendor('transform', 'translateX(77rem)');
-								opacity: 1;
-
-								img {
-									opacity: 1;
-								}
-							}
-						}
-					}
-
 					&.on#{$event}-image-color-fade {
-
-						    background-image: url(../../images/overlay2.png), url(../../images/overlay3.svg), linear-gradient(-135deg, #ff4b1f , #1fddff);
-								background-position: top left,	center center,	center center;
-								background-size: auto,	cover, cover;
-								background-attachment: fixed, fixed,	fixed;
+						.image {
+							@include vendor('transition', 'opacity #{$y * 1.25} ease-in-out');
 					}
+
+						.content h2, p {
+							@include vendor('transition', 'color #{$y * 1.25} ease-in-out');
+							color: _palette(fg);
+						}
+
+					#{$x} {
+						.image {
+								opacity: 0;
+						}
+						.content h2, p {
+							color: _palette(bg);
+						}
+
+					}
+				}
+
+				&.on#{$event}-text-fade {
+					.content {
+					 p:last-child {
+						@include vendor('transition', 'opacity #{$y * 1.25} ease-in-out #{$y * 3}');
+					}
+				}
+
+					#{$x} {
+
+						.content {
+						 p:last-child {
+							opacity: 0;
+						}
+					}
+				}
+
+				}
+
+				&.on#{$event}-palatte-shift {
+					@include vendor('transition', 'background-color #{$y * 1.25} ease-in-out #{$y * 1.25}');
+
+					#{$x} {
+						background-color: darken(_palette(color2),10%)!important;
+					}
+				}
+
+				&.on#{$event}-content-fade-in-stages {
+					.content * {
+						@include transition-stages;
+					}
+
+					#{$x} {
+						.content *:not(.opaque) {
+							opacity: 0;
+						}
+					}
+				}
+
+
 
 			}
 
@@ -384,14 +361,14 @@
 
 			@include orientation(portrait) {
 				@include vendor('flex-direction', 'column-reverse');
-				text-align: center !important;
+			/*	text-align: center !important; */
 
 				.content {
-					width: 100%;
+					width: 100% !important;
 				}
 
 				.image {
-					width: 100%;
+					width: 100% !important;
 
 					img {
 						position: relative;
@@ -401,6 +378,17 @@
 		}
 
 		// Modifiers.
+
+		// Ratio
+		&.fifty {
+			.content {
+			width:50%;
+		}
+		.image {
+			width:50%;
+		}
+		}
+
 
 			// Orientation.
 				&.orient-left {
@@ -487,6 +475,10 @@
 				display: block;
 				width: 100%;
 				height: 100%;
+				border-radius: 100%;
+			}
+
+			&:after {
 				border-radius: 100%;
 			}
 		}
@@ -602,7 +594,7 @@
 /* Spotlight (style3) */
 
 	.spotlight.style3 {
-		$image-width: 8rem;
+		$image-width: 13rem;
 		$content-size: (_size(inner) * 0.75) - (_size(element-margin) * 1.75);
 
 		@include padding(_size(padding, default), _size(padding, default));
@@ -617,16 +609,11 @@
 		.content {
 			width: $content-size;
 			max-width: 100%;
-			max-width: 23em;
 		}
 
 		.image {
 			@include phone($image-width);
 			margin-right: (_size(element-margin) * 1.75);
-
-			img {
-				border: 1px solid rgba(0, 0, 0, 0.2);
-			}
 		}
 
 		@include breakpoint(xlarge) {
@@ -755,12 +742,31 @@
 		.content {
 			@include padding(_size(padding, default) * 0.5, _size(padding, default) * 0.5);
 			position: relative;
-			width: (_size(inner) * 0.625);
+			width: (_size(inner) * 0.65 );
 			max-width: 50%;
 			background-color: inherit;
 			border-radius: _size(border-radius-alt);
 			margin-bottom: _size(element-margin);
 			z-index: 1;
+
+				h2.offset-1 {
+					font-family: _font(family-fixed);
+					position: absolute;
+					top: 2em;
+					left: 4em;
+
+				+ p {
+					margin-top: 5em;
+				}
+			}
+
+			p.offset-1 {
+				text-align: right;
+				position: absolute;
+				right: 0;
+				bottom: -5em;
+			}
+
 		}
 
 		.image {
@@ -815,6 +821,11 @@
 
 			.content {
 				@include padding(_size(padding, small) * 0.75, _size(padding, small) * 0.75);
+
+				h2.offset-1 {
+					line-height: 1em;
+				}
+
 			}
 		}
 
@@ -829,6 +840,10 @@
 			// Size.
 				&.fullscreen {
 					min-height: 100vh;
+				}
+
+				&.mostscreen {
+					min-height: 75vh;
 				}
 
 				&.halfscreen {
@@ -911,12 +926,12 @@
 		.content {
 			@include padding(_size(padding, default) * 0.5, _size(padding, default) * 0.5);
 			position: relative;
-			width: (_size(inner) * 0.625);
-			max-width: 52.5%;
+			width: (_size(inner) * 0.725);
+			max-width: 80%;
 			background-color: inherit;
 			border-radius: _size(border-radius-alt);
 			margin-bottom: _size(element-margin);
-			z-index: 1;
+			z-index: 4;
 		}
 
 		.image {
@@ -971,12 +986,13 @@
 
 			.content {
 				@include padding(_size(padding, small) * 0.75, _size(padding, small) * 0.75);
+				text-align: center;
 			}
 		}
 
 		@include breakpoint(xsmall) {
 			.content {
-				max-width: 80%;
+				max-width: 100%;
 			}
 		}
 
@@ -985,6 +1001,10 @@
 			// Size.
 				&.fullscreen {
 					min-height: 100vh;
+				}
+
+				&.mostscreen {
+					min-height: 75vh;
 				}
 
 				&.halfscreen {
@@ -1040,163 +1060,155 @@
 
 	}
 
-/* Spotlight (style6) */
+	/* Spotlight (style6) */
 
-.spotlight.style6 {
-	$image-size: 11rem;
-	$content-size: (_size(inner) * 0.75) - (_size(element-margin) * 1.75);
+		.spotlight.style6 {
+			@include padding(_size(padding, default), _size(padding, default) * 0.75);
+			@include vendor('align-items', 'center');
+			@include vendor('display', 'flex');
+			@include vendor('justify-content', 'center');
+			background-color: inherit;
+			position: relative;
+			overflow-x: hidden;
+			text-align: center;
 
-	@include padding(_size(padding, default), _size(padding, default));
-	@include vendor('align-items', 'center');
-	@include vendor('display', 'flex');
-	@include vendor('flex-direction', 'row-reverse');
-	@include vendor('justify-content', 'center');
-	position: relative;
-	overflow-x: hidden;
-	text-align: left;
+			.content {
+				@include padding(_size(padding, default) * 0.5, _size(padding, default) * 0.5);
+				position: relative;
+				width: (_size(inner) * 0.725);
+				max-width: 80%;
+				background-color: inherit;
+				border-radius: _size(border-radius-alt);
+				margin-bottom: _size(element-margin);
+				z-index: 4;
+				background: transparent;
+			}
 
-	.content {
-		width: $content-size;
-		max-width: 23em;
-	}
+			.image {
+				@include vendor('flex-grow', '0');
+				@include vendor('flex-shrink', '0');
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 0;
 
-	.image {
-		@include vendor('flex-grow', '0');
-		@include vendor('flex-shrink', '0');
-		width: $image-size;
-		height: $image-size;
-		margin: 0 (_size(element-margin) * 1.75) _size(element-margin) 0;
-		background-color: transparent;
-
-		&::before {
-			-webkit-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-		}
-
-		&::after {
-			-webkit-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-		}
-
-		img {
-			@include vendor('object-fit', 'cover');
-			@include vendor('object-position', 'center');
-			display: block;
-			width: 100%;
-			height: 100%;
-			-webkit-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-		}
-	}
-
-	@include breakpoint(xlarge) {
-		@include padding(_size(padding, xlarge), _size(padding, xlarge));
-	}
-
-	@include breakpoint(large) {
-		@include padding(_size(padding, large), _size(padding, large));
-	}
-
-	@include breakpoint(medium) {
-		@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
-
-		.image {
-			width: ($image-size * 0.875);
-			height: ($image-size * 0.875);
-		}
-	}
-
-	@include breakpoint(small) {
-		@include padding(_size(padding, small) * 1.25, _size(padding, small));
-		@include vendor('align-items', 'flex-start');
-
-		.image {
-			width: ($image-size * 0.75);
-			height: ($image-size * 0.75);
-			margin: 0 (_size(element-margin) * 1) _size(element-margin) 0;
-		}
-	}
-
-	@include orientation(portrait) {
-		@include vendor('align-items', 'center');
-		@include vendor('flex-direction', 'column-reverse');
-		text-align: center !important;
-
-		.content {
-			width: 34rem;
-			max-width: 100%;
-		}
-
-		.image {
-			margin-right: 0;
-		}
-	}
-
-	// Modifiers.
-
-		// Orientation.
-			&.orient-left {
-				@include vendor('flex-direction', 'row');
-
-				.image {
-					margin: 0 0 _size(element-margin) (_size(element-margin) * 1.75);
+				img {
+					@include vendor('object-fit', 'cover');
+					@include vendor('object-position', 'center');
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: 0;
 				}
+			}
 
-				@include breakpoint(small) {
-					.image {
-						margin: 0 0 _size(element-margin) (_size(element-margin) * 1);
+			@include breakpoint(xlarge) {
+				@include padding(_size(padding, xlarge), _size(padding, xlarge) * 0.75);
+
+				.content {
+					@include padding(_size(padding, xlarge) * 0.5, _size(padding, xlarge) * 0.5);
+				}
+			}
+
+			@include breakpoint(large) {
+				@include padding(_size(padding, large), _size(padding, large) * 0.75);
+
+				.content {
+					@include padding(_size(padding, large) * 0.75, _size(padding, large) * 0.75);
+				}
+			}
+
+			@include breakpoint(medium) {
+				@include padding(_size(padding, medium), _size(padding, medium) * 0.75);
+
+				.content {
+					@include padding(_size(padding, medium) * 0.75, _size(padding, medium) * 0.75);
+				}
+			}
+
+			@include breakpoint(small) {
+				@include padding(_size(padding, small), _size(padding, small) * 0.75);
+
+				.content {
+					@include padding(_size(padding, small) * 0.75, _size(padding, small) * 0.75);
+					text-align: center;
+				}
+			}
+
+			@include breakpoint(xsmall) {
+				.content {
+					max-width: 100%;
+				}
+			}
+
+			// Modifiers.
+
+				// Size.
+					&.fullscreen {
+						min-height: 100vh;
 					}
-				}
 
-				@include orientation(portrait) {
-					@include vendor('flex-direction', 'column-reverse');
-
-					.image {
-						margin-left: 0;
+					&.mostscreen {
+						min-height: 75vh;
 					}
-				}
-			}
 
-			&.orient-right {
-				// ...
-			}
-
-		// Content Alignment.
-			&.content-align-left {
-				// ...
-			}
-
-			&.content-align-center {
-				text-align: center;
-			}
-
-			&.content-align-right {
-				text-align: right;
-			}
-
-		// Image Position.
-			&.image-position-left {
-				.image {
-					img {
-						@include vendor('object-position', 'left');
+					&.halfscreen {
+						min-height: 50vh;
 					}
-				}
-			}
 
-			&.image-position-center {
-				// ...
-			}
-
-			&.image-position-right {
-				.image {
-					img {
-						@include vendor('object-position', 'right');
+				// Orientation.
+					&.orient-left {
+						@include vendor('justify-content', 'flex-start');
 					}
-				}
-			}
 
-}
+					&.orient-center {
+						// ...
+					}
 
+					&.orient-right {
+						@include vendor('justify-content', 'flex-end');
+					}
+
+				// Content Alignment.
+					&.content-align-left {
+						text-align: left;
+					}
+
+					&.content-align-center {
+						// ...
+					}
+
+					&.content-align-right {
+						text-align: right;
+					}
+
+				// Image Position.
+					&.image-position-left {
+						.image {
+							img {
+								@include vendor('object-position', 'left');
+							}
+						}
+					}
+
+					&.image-position-center {
+						// ...
+					}
+
+					&.image-position-right {
+						.image {
+							img {
+								@include vendor('object-position', 'right');
+							}
+						}
+					}
+
+		}
 
 // Mixin
 

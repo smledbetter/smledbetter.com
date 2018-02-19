@@ -89,7 +89,7 @@
 	label {
 		display: block;
 		font-size: 0.9rem;
-		font-weight: _font(weight-bold);
+	 	font-weight: _font(weight-bold);
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
 	}
 
@@ -171,7 +171,7 @@
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1rem;
-			font-weight: _font(weight);
+			/* font-weight: _font(weight); */
 			padding-left: (_size(element-height) * 0.6) + 0.75rem;
 			padding-right: 0.75rem;
 			position: relative;
@@ -194,7 +194,7 @@
 
 		&:checked + label {
 			&:before {
-				content: '\f00c';
+				font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f00c";
 			}
 		}
 	}

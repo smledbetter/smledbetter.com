@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/stinson.css",
+	"sources": [
+		"../../sass/vendor/stinson.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Stinson\n *\n */\n\n@import 'shared';\n\n// mixin to extend stinson filter\n// @mixin stinson\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include stinson;\n//   }\n//   or\n//   img {\n//     @include stinson(blur(2px));\n//   }\n//   or\n//   img {\n//     @include stinson(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin stinson($filters...) {\n  @include filter-base;\n  filter: contrast(0.75) saturate(0.85) brightness(1.15) $filters;\n\n  &::before {\n    background: rgba(240, 149, 128, .2);\n    mix-blend-mode: soft-light;\n  }\n\n  @content;\n}\n\n// stinson Instagram filter\n%stinson,\n.stinson {\n  @include stinson;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAmCH,AAAA,QAAQ,CAAC;EC3BP,QAAQ,EAAE,QAAS;EDenB,MAAM,EAAE,cAAQ,CAAO,cAAQ,CAAO,gBAAU;CAcjD;;;;AAFD,ACzBE,QDyBM,CCzBN,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADsBH,AAAA,QAAQ,ACpBL,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADiBH,AAAA,QAAQ,ACfL,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADYH,AAAA,QAAQ,AAVL,QAAQ,CAAC;EACR,UAAU,EAAE,wBAAI;EAChB,cAAc,EAAE,UAAW;CAC5B",
+	"names": []
+}
