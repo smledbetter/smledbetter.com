@@ -7,11 +7,11 @@
 <html>
 
 	<head>
-    <title>vice raw denim activated</title>
+    <title>We&#39;re All Motivation Designers</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="vice raw denim activated charcoal whatever.">
+    <meta name="description" content="We clearly need motivating technology. Now we just need people to design it.">
     <meta name="author" content="Steven M. smledbetter">
 
     <!-- JSON-LD -->
@@ -33,12 +33,12 @@
     </script>
 
     <!-- Search Engine -->
-    <meta name="description" content="vice raw denim activated charcoal whatever.">
+    <meta name="description" content="We clearly need motivating technology. Now we just need people to design it.">
     <meta name="image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Steven M. Ledbetter">
-    <meta itemprop="description" content="vice raw denim activated charcoal whatever.">
+    <meta itemprop="description" content="We clearly need motivating technology. Now we just need people to design it.">
     <meta itemprop="image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- Open Graph -->
@@ -51,7 +51,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="thecoachstevo">
     <meta name="twitter:title" content="Steven M. Ledbetter">
-    <meta name="twitter:description" content="vice raw denim activated charcoal whatever.">
+    <meta name="twitter:description" content="We clearly need motivating technology. Now we just need people to design it.">
     <meta name="twitter:image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- icons -->
@@ -59,7 +59,7 @@
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="/assets/css/main.css ">
-    <link rel="canonical" href="/blog/vice-raw-denim-activated">
+    <link rel="canonical" href="/blog/were-all-motivation-designers">
 </head>
 
 
@@ -115,9 +115,9 @@
 <!-- header -->
   <section class="banner style5 invert halfscreen content-align-left image-position-left onload-image-fade-in-slow onload-content-fade-in-stages">
     <div class="content">
-      <h2>vice raw denim activated</h2>
+      <h2>We're All Motivation Designers</h2>
       <p class="major">by </p>
-        <!--  <p class="major">Jan 26, 2017</p> -->
+        <!--  <p class="major">Oct 4, 2017</p> -->
         <p>  
             1 minute read
           </p>
@@ -132,15 +132,7 @@
 <section class="wrapper style1 align-center">
   <div class="inner style1 align-center">
       <div class="content align-left post">
-          <p>Unicorn selvage scenester, tilde activated charcoal kickstarter wolf venmo. Tattooed raw denim beard gochujang craft beer, blue bottle tbh. Shaman cold-pressed bespoke fanny pack. Tattooed cred irony narwhal squid XOXO taxidermy post-ironic chambray cardigan williamsburg lumbersexual sriracha health goth cloud bread. Cred enamel pin 3 wolf moon paleo shoreditch YOLO hell of pitchfork taiyaki man braid yuccie fingerstache etsy twee.</p>
-
-<p>Master cleanse vape tumblr gentrify live-edge, 8-bit flannel bitters four loko chicharrones migas salvia keytar synth. Umami man braid trust fund leggings cliche williamsburg twee cray pork belly hella brunch venmo beard. Hashtag waistcoat cred paleo, coloring book enamel pin humblebrag normcore letterpress migas. Salvia pitchfork ugh, chicharrones brunch lyft occupy. Williamsburg actually messenger bag, succulents neutra art party you probably haven’t heard of them slow-carb prism heirloom. Mustache locavore tousled waistcoat jean shorts.</p>
-
-<p>Celiac vape semiotics sartorial hammock. Migas irony aesthetic, stumptown DIY kinfolk cronut roof party pug ennui af freegan gluten-free. Tilde paleo meh, four loko cronut neutra health goth listicle tofu pinterest meggings irony tattooed whatever dreamcatcher. Stumptown cred 3 wolf moon, blog heirloom PBR&amp;B freegan slow-carb aesthetic. Raw denim yuccie celiac, meh try-hard chia unicorn health goth.</p>
-
-<p>Cloud bread jianbing man braid neutra vice everyday carry. Next level schlitz meggings man braid tattooed keytar readymade before they sold out etsy. Snackwave etsy helvetica paleo bitters. Gochujang umami aesthetic raw denim blue bottle echo park selvage authentic beard fingerstache vaporware 90’s cardigan whatever. Palo santo air plant photo booth ennui. Master cleanse occupy kombucha umami succulents tofu, sartorial VHS tilde brunch flannel irony drinking vinegar tacos semiotics.</p>
-
-<p>Normcore flannel marfa subway tile readymade. Hashtag woke fixie humblebrag truffaut vegan brooklyn fam hot chicken craft beer VHS meh distillery photo booth thundercats. Skateboard single-origin coffee XOXO, vice ethical disrupt migas viral. Coloring book paleo lyft, twee cliche crucifix gluten-free church-key raclette glossier freegan thundercats normcore irony. Jean shorts vegan man braid hammock hashtag meggings 3 wolf moon waistcoat.</p>
+          
 
       </div>
   </div>
@@ -158,6 +150,8 @@
       <li><a href="https://twitter.com/thecoachstevo" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
       
       
+      
+      <li><a href="https://www.instagram.com/thecoachstevo" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
       
       
       
@@ -198,6 +192,8 @@
 <!-- site specific scripts -->
 <script src="/assets/js/headroom.js"></script>
 <script src="/assets/js/smledbetter.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+
 
 <!-- On Page Scripts -->
 <script>
@@ -235,7 +231,21 @@ enter: function() {
 })
 });
 })(jQuery);
-
+</script>
+<script>
+// init Isotope
+var $grid = $('.tiles').isotope({
+  // options
+});
+// filter items on button click
+$('.filter-button-group').on( 'click', 'a', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
+$('.button-group a.button').on('click', function(){
+	$('.button-group a.button').removeClass('active');
+	$(this).addClass('active');
+});
 </script>
 
 
