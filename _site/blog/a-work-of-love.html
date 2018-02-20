@@ -7,11 +7,11 @@
 <html>
 
 	<head>
-    <title>Tumeric fingerstache cornhole</title>
+    <title>A Work of Love</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="I'm an excerpt.">
+    <meta name="description" content="An obituary for my Grandfather.">
     <meta name="author" content="Steven M. smledbetter">
 
     <!-- JSON-LD -->
@@ -33,12 +33,12 @@
     </script>
 
     <!-- Search Engine -->
-    <meta name="description" content="I'm an excerpt.">
+    <meta name="description" content="An obituary for my Grandfather.">
     <meta name="image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Steven M. Ledbetter">
-    <meta itemprop="description" content="I'm an excerpt.">
+    <meta itemprop="description" content="An obituary for my Grandfather.">
     <meta itemprop="image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- Open Graph -->
@@ -51,7 +51,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="thecoachstevo">
     <meta name="twitter:title" content="Steven M. Ledbetter">
-    <meta name="twitter:description" content="I'm an excerpt.">
+    <meta name="twitter:description" content="An obituary for my Grandfather.">
     <meta name="twitter:image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- icons -->
@@ -59,7 +59,7 @@
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="/assets/css/main.css ">
-    <link rel="canonical" href="/blog/tumeric-fingerstache-cornhole">
+    <link rel="canonical" href="/blog/a-work-of-love">
 </head>
 
 
@@ -115,9 +115,9 @@
 <!-- header -->
   <section class="banner style5 invert halfscreen content-align-left image-position-left onload-image-fade-in-slow onload-content-fade-in-stages">
     <div class="content">
-      <h2>Tumeric fingerstache cornhole</h2>
+      <h2>A Work of Love</h2>
       <p class="major">by </p>
-        <!--  <p class="major">Feb 26, 2017</p> -->
+        <!--  <p class="major">Oct 16, 2015</p> -->
         <p>  
             1 minute read
           </p>
@@ -132,19 +132,7 @@
 <section class="wrapper style1 align-center">
   <div class="inner style1 align-center">
       <div class="content align-left post">
-          <p>Woke af skateboard pinterest crucifix yuccie austin blog salvia. Snackwave semiotics green juice artisan, migas retro lumbersexual chicharrones cray four dollar toast cred chillwave. Skateboard PBR&amp;B shoreditch occupy leggings fashion axe, snackwave raw denim hashtag brooklyn viral trust fund iPhone. 8-bit live-edge echo park everyday carry. Af tote bag four loko pok pok, slow-carb sriracha portland.</p>
-
-<p>Keytar wayfarers knausgaard, prism hammock aesthetic lyft four dollar toast. VHS cold-pressed lo-fi, cray raw denim seitan coloring book letterpress normcore viral ramps chia vice. Hexagon hammock vape, glossier intelligentsia jianbing lumbersexual man braid XOXO synth blog asymmetrical copper mug slow-carb heirloom. Beard whatever dreamcatcher williamsburg affogato. Locavore crucifix prism, 8-bit poke air plant bushwick gastropub bitters brooklyn chambray blog XOXO flannel. Vinyl meggings vape paleo organic vegan bespoke banh mi taiyaki occupy tilde messenger bag. Narwhal mlkshk poke 90’s.</p>
-
-<p>Post-ironic artisan hoodie venmo air plant pour-over. Vaporware paleo tacos, man bun deep v iceland trust fund pok pok. Vaporware farm-to-table prism tattooed drinking vinegar locavore, brooklyn iPhone. Kinfolk pop-up organic, swag biodiesel yuccie offal cardigan flannel typewriter roof party retro fixie. Meggings beard chicharrones letterpress.</p>
-
-<p>Blue bottle hot chicken mlkshk, artisan readymade bicycle rights green juice. Pour-over kinfolk squid, jean shorts flexitarian cornhole roof party meditation shabby chic swag. Leggings lyft artisan la croix venmo. Art party kale chips tousled tumeric, kombucha keffiyeh pok pok. Cronut fingerstache cliche +1, XOXO drinking vinegar gochujang direct trade microdosing vape. Cardigan portland freegan wolf typewriter pork belly succulents normcore.</p>
-
-<p>Tumeric cloud bread fashion axe DIY, vinyl fixie dreamcatcher chambray jianbing normcore. Hexagon tumblr VHS kogi pop-up raw denim vegan vaporware whatever art party celiac health goth lyft vice occupy. Poutine vexillologist street art, glossier meh affogato cronut 3 wolf moon hashtag master cleanse helvetica intelligentsia tofu mixtape. Kitsch tacos quinoa, fixie bicycle rights 90’s literally banjo. Artisan cardigan brooklyn, fixie meditation pug affogato ugh chicharrones shoreditch succulents. Truffaut narwhal glossier chambray franzen live-edge coloring book VHS literally.</p>
-
-<p>Oh. You need a little dummy text for your mockup? How quaint.</p>
-
-<p>I bet you’re still using Bootstrap too…</p>
+          
 
       </div>
   </div>
@@ -162,6 +150,8 @@
       <li><a href="https://twitter.com/thecoachstevo" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
       
       
+      
+      <li><a href="https://www.instagram.com/thecoachstevo" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
       
       
       
@@ -202,6 +192,8 @@
 <!-- site specific scripts -->
 <script src="/assets/js/headroom.js"></script>
 <script src="/assets/js/smledbetter.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+
 
 <!-- On Page Scripts -->
 <script>
@@ -239,7 +231,21 @@ enter: function() {
 })
 });
 })(jQuery);
-
+</script>
+<script>
+// init Isotope
+var $grid = $('.tiles').isotope({
+  // options
+});
+// filter items on button click
+$('.filter-button-group').on( 'click', 'a', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
+$('.button-group a.button').on('click', function(){
+	$('.button-group a.button').removeClass('active');
+	$(this).addClass('active');
+});
 </script>
 
 

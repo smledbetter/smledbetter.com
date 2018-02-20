@@ -17,7 +17,7 @@ title: Steven M. Ledbetter
 							<div class="arrow"><a href="#mission" class="smooth-scroll"><img width="15%" src="images/np_down-arrow_761740_000000.svg"></a></div>
 						</div>
 						<div class="image stevo">
-							<img src="images/boom-stevo.jpg" alt="" /> 
+							<img src="images/boom-stevo.jpg" alt="" />
 						</div>
 					</section>
 
@@ -92,6 +92,23 @@ title: Steven M. Ledbetter
 							</div>
 						</div>
 					</section>
+
+					<!-- Writing -->
+					<section class="wrapper style1 align-center" id="writing">
+						<div class="inner medium">
+							<h2>Stuff Stevo has written lately</h2>
+									<div class="index align-center">
+										<section>
+											<div class="content">
+												<ul class="alt linkroll">
+													{% for post in site.posts limit:site.front-page-posts %}
+												<li><a href="{{ post.link }}"><h4><span>{{ post.title }}</span><span>{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</span></h4></a></li>
+												{% endfor %}
+												</ul>
+											</div>
+									</div>
+						</div>
+				</section>
 
 				<!-- Four -->
 				<section class="spotlight style7 invert content-align-center">

@@ -375,6 +375,8 @@
       
       
       
+      <li><a href="https://www.instagram.com/thecoachstevo" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
+      
       
       
       <li><a href="https://github.com/smledbetter" class="icon style3 fab fa-github"><span class="label">GitHub</span></a></li>
@@ -414,6 +416,8 @@
 <!-- site specific scripts -->
 <script src="/assets/js/headroom.js"></script>
 <script src="/assets/js/smledbetter.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+
 
 <!-- On Page Scripts -->
 <script>
@@ -451,7 +455,21 @@ enter: function() {
 })
 });
 })(jQuery);
-
+</script>
+<script>
+// init Isotope
+var $grid = $('.tiles').isotope({
+  // options
+});
+// filter items on button click
+$('.filter-button-group').on( 'click', 'a', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
+$('.button-group a.button').on('click', function(){
+	$('.button-group a.button').removeClass('active');
+	$(this).addClass('active');
+});
 </script>
 
 

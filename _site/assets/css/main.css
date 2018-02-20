@@ -9725,6 +9725,95 @@ body.is-touch .tiles article .content {
 	animation-delay: 0s,2s;
 }
 */
+/* Effect 9: second text and borders */
+.linkroll a {
+  border-bottom: none;
+}
+
+.linkroll a h4 {
+  margin-bottom: 0px;
+}
+
+.linkroll a::after {
+  top: 100%;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  /*-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px); */
+}
+
+.linkroll a span:first-child {
+  z-index: 2;
+  display: block;
+  font-weight: 300;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.linkroll a span:last-child {
+  z-index: 1;
+  display: block;
+  padding: 8px 0 0 0;
+  text-shadow: none;
+  text-transform: none;
+  font-size: 0.75em;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: translateY(-75%);
+  -moz-transform: translateY(-75%);
+  transform: translateY(-75%);
+}
+
+.linkroll a:hover::before,
+.linkroll a:focus::before {
+  height: 6px;
+}
+
+.linkroll a:hover::before,
+.linkroll a:hover::after,
+.linkroll a:focus::before,
+.linkroll a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.linkroll li:hover:after {
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.linkroll a:hover span:first-child,
+.linkroll a:focus span:first-child {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  transform: translateY(0%);
+  color: #0438CC;
+}
+
+.linkroll a:hover span:last-child,
+.linkroll a:focus span:last-child {
+  opacity: 1;
+  -webkit-transform: translateY(-25%);
+  -moz-transform: translateY(-25%);
+  transform: translateY(-25%);
+  color: #0438CC;
+}
+
 /* slide show */
 .swiper-container {
   width: 100%;

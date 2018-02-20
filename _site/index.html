@@ -99,7 +99,7 @@
 							<div class="arrow"><a href="#mission" class="smooth-scroll"><img width="15%" src="images/np_down-arrow_761740_000000.svg"></a></div>
 						</div>
 						<div class="image stevo">
-							<img src="images/boom-stevo.jpg" alt="" /> 
+							<img src="images/boom-stevo.jpg" alt="" />
 						</div>
 					</section>
 
@@ -175,6 +175,37 @@
 						</div>
 					</section>
 
+					<!-- Writing -->
+					<section class="wrapper style1 align-center" id="writing">
+						<div class="inner medium">
+							<h2>Stuff Stevo has written lately</h2>
+									<div class="index align-center">
+										<section>
+											<div class="content">
+												<ul class="alt linkroll">
+													
+												<li><a href="https://medium.com/practical-motivation-science/how-to-design-motivating-push-notifications-d25ef3874e42"><h4><span>How to Design Motivating Push Notifications</span><span>Why some push notifications make people quit apps, why others work, and 8 useful guidelines for improving your push notifications.</span></h4></a></li>
+												
+												<li><a href="https://medium.com/practical-motivation-science/motivating-humans-cbf9494eddf1"><h4><span>Motivating Humans</span><span>An Introduction to Self-Determination Theory and its Practical Applications.</span></h4></a></li>
+												
+												<li><a href="https://medium.com/practical-motivation-science/the-nagging-issues-of-nudging-f0af3a8f8b5"><h4><span>The Nagging Issues of Nudging</span><span>A Nobel Prize doesn’t answer the hard questions we’re all avoiding about nudging.</span></h4></a></li>
+												
+												<li><a href="https://medium.com/practical-motivation-science/https-medium-com-practical-motivation-science-we-are-all-motivation-designers-4694ce1793a3"><h4><span>We're All Motivation Designers</span><span>We clearly need motivating technology. Now we just need people to design it.</span></h4></a></li>
+												
+												<li><a href="https://medium.com/@habitry/ai-is-cool-but-how-do-i-scale-health-coaching-now-7b2234547dc0"><h4><span>AI is cool, but how do I scale health coaching now?</span><span>Health and fitness coaching will soon be handled by artificial intelligence, but how does health coaching scale now?</span></h4></a></li>
+												
+												<li><a href="https://medium.com/@habitry/how-artificial-intelligence-will-scale-health-coaching-93ad16c3473e"><h4><span>How Artificial Intelligence Will Scale Health Coaching</span><span>Most health coaching will be handled by artificial intelligence in the next five years. Here's how we think it will go down.</span></h4></a></li>
+												
+												<li><a href="https://medium.com/@coach_stevo/confessions-of-a-recovering-bullshitter-81d883d98b95"><h4><span>Confessions of a Recovering Bullshitter</span><span>How I ended up in the Bullshit Industrial Complex and my pledge to stay out of it.</span></h4></a></li>
+												
+												<li><a href="https://medium.com/@coach_stevo/a-work-of-love-dd113b40a4ac"><h4><span>A Work of Love</span><span>An obituary for my Grandfather.</span></h4></a></li>
+												
+												</ul>
+											</div>
+									</div>
+						</div>
+				</section>
+
 				<!-- Four -->
 				<section class="spotlight style7 invert content-align-center">
 					<div class="content">
@@ -235,6 +266,8 @@
 <!-- site specific scripts -->
 <script src="/assets/js/headroom.js"></script>
 <script src="/assets/js/smledbetter.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+
 
 <!-- On Page Scripts -->
 <script>
@@ -272,7 +305,21 @@ enter: function() {
 })
 });
 })(jQuery);
-
+</script>
+<script>
+// init Isotope
+var $grid = $('.tiles').isotope({
+  // options
+});
+// filter items on button click
+$('.filter-button-group').on( 'click', 'a', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
+$('.button-group a.button').on('click', function(){
+	$('.button-group a.button').removeClass('active');
+	$(this).addClass('active');
+});
 </script>
 
 

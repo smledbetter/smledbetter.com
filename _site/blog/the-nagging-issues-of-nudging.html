@@ -7,11 +7,11 @@
 <html>
 
 	<head>
-    <title>Fanny pack roof</title>
+    <title>The Nagging Issues of Nudging</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Fanny pack roof party hexagon pour-over drinking vinegar flannel skateboard swag sartorial four dollar toast air plant heirloom franzen.">
+    <meta name="description" content="A Nobel Prize doesn’t answer the hard questions we’re all avoiding about nudging.">
     <meta name="author" content="Steven M. smledbetter">
 
     <!-- JSON-LD -->
@@ -33,12 +33,12 @@
     </script>
 
     <!-- Search Engine -->
-    <meta name="description" content="Fanny pack roof party hexagon pour-over drinking vinegar flannel skateboard swag sartorial four dollar toast air plant heirloom franzen.">
+    <meta name="description" content="A Nobel Prize doesn’t answer the hard questions we’re all avoiding about nudging.">
     <meta name="image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Steven M. Ledbetter">
-    <meta itemprop="description" content="Fanny pack roof party hexagon pour-over drinking vinegar flannel skateboard swag sartorial four dollar toast air plant heirloom franzen.">
+    <meta itemprop="description" content="A Nobel Prize doesn’t answer the hard questions we’re all avoiding about nudging.">
     <meta itemprop="image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- Open Graph -->
@@ -51,7 +51,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="thecoachstevo">
     <meta name="twitter:title" content="Steven M. Ledbetter">
-    <meta name="twitter:description" content="Fanny pack roof party hexagon pour-over drinking vinegar flannel skateboard swag sartorial four dollar toast air plant heirloom franzen.">
+    <meta name="twitter:description" content="A Nobel Prize doesn’t answer the hard questions we’re all avoiding about nudging.">
     <meta name="twitter:image" content="http://0.0.0.0:4000/images/share.png">
 
     <!-- icons -->
@@ -59,7 +59,7 @@
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="/assets/css/main.css ">
-    <link rel="canonical" href="/blog/fanny-pack-roof">
+    <link rel="canonical" href="/blog/the-nagging-issues-of-nudging">
 </head>
 
 
@@ -115,9 +115,9 @@
 <!-- header -->
   <section class="banner style5 invert halfscreen content-align-left image-position-left onload-image-fade-in-slow onload-content-fade-in-stages">
     <div class="content">
-      <h2>Fanny pack roof</h2>
+      <h2>The Nagging Issues of Nudging</h2>
       <p class="major">by </p>
-        <!--  <p class="major">May 26, 2017</p> -->
+        <!--  <p class="major">Oct 23, 2017</p> -->
         <p>  
             1 minute read
           </p>
@@ -132,15 +132,7 @@
 <section class="wrapper style1 align-center">
   <div class="inner style1 align-center">
       <div class="content align-left post">
-          <p>Fanny pack roof party hexagon pour-over drinking vinegar flannel skateboard swag sartorial four dollar toast air plant heirloom franzen. Farm-to-table adaptogen ugh seitan. Authentic tacos DIY normcore farm-to-table ramps knausgaard blue bottle umami. Vinyl leggings selfies fixie bicycle rights.</p>
-
-<p>Banh mi master cleanse squid kitsch gluten-free tousled narwhal jianbing edison bulb twee hoodie. Taxidermy tbh shaman meggings synth, jean shorts chia taiyaki pickled. Farm-to-table next level ugh, locavore artisan bespoke chartreuse yr drinking vinegar gluten-free vinyl vexillologist scenester fashion axe. Humblebrag chambray health goth bespoke hot chicken green juice.</p>
-
-<p>Cred tumeric you probably haven’t heard of them, four loko shaman vice locavore fingerstache paleo forage poke pok pok. Truffaut cloud bread selfies cronut four loko banjo. Try-hard single-origin coffee chia hot chicken craft beer crucifix. Occupy chartreuse hot chicken readymade austin. Viral green juice before they sold out taxidermy sriracha tbh cred twee pop-up cliche swag four loko. Glossier messenger bag coloring book drinking vinegar. Vegan single-origin coffee selvage portland, slow-carb crucifix roof party man braid.</p>
-
-<p>Keytar kickstarter wolf subway tile health goth VHS. 3 wolf moon salvia vegan farm-to-table +1 marfa. Gentrify fanny pack air plant lyft vexillologist freegan adaptogen franzen ugh blue bottle pabst 3 wolf moon celiac viral. Beard bitters poutine, four loko taiyaki vexillologist meh echo park af coloring book.</p>
-
-<p>Shoreditch wayfarers small batch copper mug unicorn woke. Shabby chic ethical pop-up cloud bread waistcoat tilde. Tousled portland kombucha synth. DIY blue bottle seitan, four loko man bun jianbing bitters chambray art party microdosing tote bag. Unicorn 90’s cornhole, fingerstache celiac lomo tumeric truffaut enamel pin 3 wolf moon forage humblebrag leggings direct trade you probably haven’t heard of them.</p>
+          
 
       </div>
   </div>
@@ -158,6 +150,8 @@
       <li><a href="https://twitter.com/thecoachstevo" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
       
       
+      
+      <li><a href="https://www.instagram.com/thecoachstevo" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
       
       
       
@@ -198,6 +192,8 @@
 <!-- site specific scripts -->
 <script src="/assets/js/headroom.js"></script>
 <script src="/assets/js/smledbetter.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+
 
 <!-- On Page Scripts -->
 <script>
@@ -235,7 +231,21 @@ enter: function() {
 })
 });
 })(jQuery);
-
+</script>
+<script>
+// init Isotope
+var $grid = $('.tiles').isotope({
+  // options
+});
+// filter items on button click
+$('.filter-button-group').on( 'click', 'a', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
+$('.button-group a.button').on('click', function(){
+	$('.button-group a.button').removeClass('active');
+	$(this).addClass('active');
+});
 </script>
 
 
