@@ -237,13 +237,15 @@
 
 					&.on#{$event}-image-fade-in {
 						.image {
+							@include vendor('transition', 'opacity #{$y} ease-in-out');
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
-							}
+							} 
 						}
 
 						#{$x} {
 							.image {
+								opacity: 0;
 								img {
 									opacity: 0;
 								}
