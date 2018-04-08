@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/brannan.css",
+	"sources": [
+		"../../sass/vendor/brannan.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Brannan\n *\n */\n@import 'shared';\n\n// mixin to extend brannan filter\n// @mixin brannan\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include brannan;\n//   }\n//   or\n//   img {\n//     @include brannan(blur(2px));\n//   }\n//   or\n//   img {\n//     @include brannan(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n\n@mixin brannan($filters...) {\n  @include filter-base;\n  filter: sepia(0.5) contrast(1.4) $filters;\n\n  &::after {\n    background-color: rgba(161, 44, 199, .31);\n    mix-blend-mode: lighten;\n  }\n\n  @content;\n}\n\n// brannan Instagram filter\n%brannan,\n.brannan {\n  @include brannan;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAmCH,AAAA,QAAQ,CAAC;EC3BP,QAAQ,EAAE,QAAS;EDenB,MAAM,EAAE,UAAK,CAAM,aAAQ;CAc5B;;;;AAFD,ACzBE,QDyBM,CCzBN,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADsBH,AAAA,QAAQ,ACpBL,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADiBH,AAAA,QAAQ,ACfL,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADYH,AAAA,QAAQ,AAVL,OAAO,CAAC;EACP,gBAAgB,EAAE,wBAAI;EACtB,cAAc,EAAE,OAAQ;CACzB",
+	"names": []
+}

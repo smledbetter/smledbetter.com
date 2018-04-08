@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/toaster.css",
+	"sources": [
+		"../../sass/vendor/toaster.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Toaster\n *\n */\n@import 'shared';\n\n// mixin to extend toaster filter\n// @mixin toaster\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include toaster;\n//   }\n//   or\n//   img {\n//     @include toaster(blur(2px));\n//   }\n//   or\n//   img {\n//     @include toaster(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin toaster($filters...) {\n  @include filter-base;\n  filter: contrast(1.5) brightness(.9) $filters;\n\n  &::after {\n    background: radial-gradient(circle, rgb(128, 78, 15), rgb(59, 0, 59));\n    mix-blend-mode: screen;\n  }\n\n  @content;\n}\n\n// toaster Instagram filter\n%toaster,\n.toaster {\n  @include toaster;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAkCH,AAAA,QAAQ,CAAC;EC1BP,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,aAAQ,CAAM,eAAU;CAcjC;;;;AAFD,ACxBE,QDwBM,CCxBN,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADqBH,AAAA,QAAQ,ACnBL,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADgBH,AAAA,QAAQ,ACdL,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADWH,AAAA,QAAQ,AAVL,OAAO,CAAC;EACP,UAAU,EAAE,yCAAe;EAC3B,cAAc,EAAE,MAAO;CACxB",
+	"names": []
+}

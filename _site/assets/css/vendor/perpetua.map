@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/perpetua.css",
+	"sources": [
+		"../../sass/vendor/perpetua.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Perpetua\n *\n */\n@import 'shared';\n\n// mixin to extend perpetua filter\n// @mixin perpetua\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include perpetua;\n//   }\n//   or\n//   img {\n//     @include perpetua(blur(2px));\n//   }\n//   or\n//   img {\n//     @include perpetua(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin perpetua($filters...) {\n  @include filter-base;\n  @if length($filters) > 0 {\n    filter: $filters;\n  }\n\n  &::after {\n    background: linear-gradient(to bottom, rgb(0, 91, 154), rgb(230, 193, 61));\n    mix-blend-mode: soft-light;\n    opacity: .5;\n  }\n\n  @content;\n}\n\n// perpetua Instagram filter\n%perpetua,\n.perpetua {\n  @include perpetua;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAqCH,AAAA,SAAS,CAAC;EC7BR,QAAQ,EAAE,QAAS;CD+BpB;;;;AAFD,AC3BE,SD2BO,CC3BP,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;ADwBH,AAAA,SAAS,ACtBN,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADmBH,AAAA,SAAS,ACjBN,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADcH,AAAA,SAAS,AAXN,OAAO,CAAC;EACP,UAAU,EAAE,4CAAe;EAC3B,cAAc,EAAE,UAAW;EAC3B,OAAO,EAAE,EAAG;CACb",
+	"names": []
+}

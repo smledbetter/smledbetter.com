@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../../sass/vendor/slumber.css",
+	"sources": [
+		"../../sass/vendor/slumber.scss",
+		"../../sass/vendor/_shared.scss"
+	],
+	"sourcesContent": [
+		"/*\n *\n * Slumber\n *\n */\n@import 'shared';\n\n// mixin to extend slumber filter\n// @mixin slumber\n// @param $filters... {filter} - Zero to many css filters to be added\n// @example\n//   img {\n//     @include slumber;\n//   }\n//   or\n//   img {\n//     @include slumber(blur(2px));\n//   }\n//   or\n//   img {\n//     @include slumber(blur(2px)) {\n//       /*...*/\n//     };\n//   }\n@mixin slumber($filters...) {\n  @include filter-base;\n  filter: saturate(.66) brightness(1.05) $filters;\n\n  &::after {\n    background: rgba(125, 105, 24, 0.5);\n    mix-blend-mode: soft-light;\n  }\n\n  &::before {\n    background: rgba(69, 41, 12, .4);\n    mix-blend-mode: lighten;\n  }\n\n  @content;\n}\n\n// slumber Instagram filter\n%slumber,\n.slumber {\n  @include slumber;\n}\n",
+		"@mixin pseudo-elem {\n  content: '';\n  display: block;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  pointer-events: none;\n}\n\n@mixin filter-base {\n  position: relative;\n\n  img {\n    width: 100%;\n    z-index: 1;\n  }\n\n  &:before {\n    @include pseudo-elem;\n    z-index: 2;\n  }\n\n  &:after {\n    @include pseudo-elem;\n    z-index: 3;\n  }\n}\n"
+	],
+	"mappings": "AAAA;;;;GAIG;;;AAuCH,AAAA,QAAQ,CAAC;EC/BP,QAAQ,EAAE,QAAS;EDcnB,MAAM,EAAE,cAAQ,CAAM,gBAAU;CAmBjC;;;;AAFD,AC7BE,QD6BM,CC7BN,GAAG,CAAC;EACF,KAAK,EAAE,IAAK;EACZ,OAAO,EAAE,CAAE;CACZ;;;;AD0BH,AAAA,QAAQ,ACxBL,OAAO,CAAC;EAlBT,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAanB,OAAO,EAAE,CAAE;CACZ;;;;ADqBH,AAAA,QAAQ,ACnBL,MAAM,CAAC;EAvBR,OAAO,EAAE,EAAG;EACZ,OAAO,EAAE,KAAM;EACf,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,GAAG,EAAE,CAAE;EACP,IAAI,EAAE,CAAE;EACR,QAAQ,EAAE,QAAS;EACnB,cAAc,EAAE,IAAK;EAkBnB,OAAO,EAAE,CAAE;CACZ;;;;ADgBH,AAAA,QAAQ,AAfL,OAAO,CAAC;EACP,UAAU,EAAE,uBAAI;EAChB,cAAc,EAAE,UAAW;CAC5B;;;;AAYH,AAAA,QAAQ,AAVL,QAAQ,CAAC;EACR,UAAU,EAAE,qBAAI;EAChB,cAAc,EAAE,OAAQ;CACzB",
+	"names": []
+}
