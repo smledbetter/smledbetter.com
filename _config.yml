@@ -5,7 +5,8 @@ baseurl:     ""
 url:         "https://smledbetter.com"
 date_format: "%b %-d, %Y"
 share-image: "/images/share.png"
-admin:      "Steven M. smledbetter"
+admin:      "Steven M. Ledbetter"
+admin_alias: "Coach Stevo"
 admin_email:    "stevo@smledbetter.com"
 admin_title: "Behavior Change Nerd"
 admin_twitter: "thecoachstevo"
@@ -62,13 +63,14 @@ twitter_username: thecoachstevo
 skype_username: smledbetter
 steam_nickname:
 google_plus_id:
-linkedin_username:
+linkedin_username: smledbetter
 angellist_username: smledbetter
 medium_id: coach_stevo
 bitcoin_:
 paypal_:
 flattr_button:
 instagram_username: thecoachstevo
+keybase_username: smledbetter
 
 # Post sharing icons
 show_sharing_icons: false

@@ -11,16 +11,25 @@
     <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
-      "@type": "Organization",
+      "@type": "Person",
       "name": "{{ site.admin }}",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "",
-        "addressLocality": "{{ site.admin_city }}",
-        "addressRegion": "{{ site.admin_state }}",
-        "postalCode": ""
-      },
-      "telephone": ""
+      "alternateName": "{{ site.admin_alias }}",
+      "image": "{% if page.share-image %}{{ page.share-image | prepend: site.url }}{% else %}{{ site.share-image | prepend: site.url }}{% endif %}",
+      "sameAs": [
+        "https://github.com/{{ site.github_username }}",
+        "https://twitter.com/{{ site.twitter_username }}",
+        "https://angel.co/{{ site.angellist_username }}",
+        "https://medium.com/@{{ site.medium_id }}",
+        "https://instagram.com/{{ site.instagram_username }}",
+        "https://linkedin.com/in/{{ site.linkedin_username }}",
+        "https://keybase.com/{{ site.keybase_username }}"
+
+      ],
+      "jobTitle": "CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Habitry"
+      }
     }
     </script>
 
