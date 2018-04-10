@@ -1,3 +1,21 @@
+// typography
+
+h1 {
+  font-weight: 100;
+  letter-spacing: .1rem;
+}
+
+h3 {
+  font-family: _font(family-display);
+  font-weight: 300;
+}
+
+p.major {
+  font-family: _font(family-display);
+  font-weight: 300;
+  font-size: 1.15rem;
+}
+
 // Banner
 
 .arrow > a {
