@@ -7,12 +7,41 @@ title: Steven M. Ledbetter
 					<section id="social" class="banner style6 fullscreen orient-center content-align-left image-position-bottom onload-image-fade-in onload-content-fade-in">
 						<div class="content">
 							<h1> Stevo</h1>
-							<p class="major">Helping people who know what to do, but can't make themselves do it since 2008.</p>
+							<h3>Helping people who know what to do, but can't make themselves do it since 2008.</h3>
 							<ul class="icons">
-								<li><a href="https://twitter.com/thecoachstevo" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://instagram.com/thecoachstevo" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/smledbetter" class="icon style3 fab fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://angel.co/smledbetter" class="icon style3 fab fa-angellist"><span class="label">Angel List</span></a></li>
+								{% if site.twitter_username %}
+								<li><a href="https://twitter.com/{{ site.twitter_username }}" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
+								{% endif %}
+								{% if site.facebook_URL %}
+								<li><a href="{{ site.facebook_URL }}" class="icon style3 fab fa-facebook"><span class="label">Facebook</span></a></li>
+								{% endif %}
+								{% if site.instagram_username %}
+								<li><a href="https://www.instagram.com/{{ site.instagram_username }}" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
+								{% endif %}
+								{% if site.dribbble_username %}
+								<li><a href="#" class="icon style3 fab fa-dribbble"><span class="label">Dribbble</span></a></li>
+								{% endif %}
+								{% if site.goodreads_username %}
+								<li><a href="https://goodreads.com/{{ site.goodreads_username }}" class="icon style3 fab fa-goodreads-g"><span class="label">Goodreads</span></a></li>
+								{% endif %}
+								{% if site.github_username %}
+								<li><a href="https://github.com/{{ site.github_username }}" class="icon style3 fab fa-github"><span class="label">GitHub</span></a></li>
+								{% endif %}
+								{% if site.angellist_username %}
+								<li><a href="https://angel.co/{{ site.github_username }}" class="icon style3 fab fa-angellist"><span class="label">GitHub</span></a></li>
+								{% endif %}
+								{% if site.medium_id %}
+								<li><a href="https://medium.com/@{{ site.medium_id }}" class="icon style3 fab fa-medium"><span class="label">Medium</span></a></li>
+								{% endif %}
+								{% if site.500px_username %}
+								<li><a href="#" class="icon style3 fab fa-500px"><span class="label">500px</span></a></li>
+								{% endif %}
+								{% if site.phone %}
+								<li><a href="tel:{{site.phone}}" class="icon style3 far fa-phone"><span class="label">Phone</span></a></li>
+								{% endif %}
+								{% if site.email %}
+								<li><a href="mailto:{{ site.email }}" class="icon style3 far fa-envelope"><span class="label">Email</span></a></li>
+								{% endif %}
 							</ul>
 							<div class="arrow"><a href="#mission" class="smooth-scroll"><img width="15%" src="images/np_down-arrow_761740_000000.svg"></a></div>
 						</div>
@@ -26,7 +55,7 @@ title: Steven M. Ledbetter
 				<section id="mission" class="spotlight style7 invert">
 					<div class="content">
 						<h2><span class="small">Making Stuff with</span><br /> Motivation Science</h2>
-						<p>Steven M. Ledbetter, aka "Stevo" or "Coach Stevo" is an expert in the science of human behavior change. He has built sucessful companies, products, and services that have helped thousands of people change their lives.</p>
+						<p class="major">Steven M. Ledbetter, aka "Stevo" or "Coach Stevo" is an expert in the science of human behavior change. He has built sucessful companies, products, and services that have helped thousands of people change their lives.</p>
 						<div id="flask"><div class="flask-icon"><simple-svg data-icon="fa-flask" data-width="3.25rem"></simple-svg></div>
 						<div class="bubble b0"></div>
 						<div class="bubble b1"></div>

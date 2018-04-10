@@ -13,6 +13,9 @@
       {% if site.dribbble_username %}
       <li><a href="#" class="icon style3 fab fa-dribbble"><span class="label">Dribbble</span></a></li>
       {% endif %}
+      {% if site.goodreads_username %}
+      <li><a href="https://goodreads.com/{{ site.goodreads_username }}" class="icon style3 fab fa-goodreads-g"><span class="label">Goodreads</span></a></li>
+      {% endif %}
       {% if site.github_username %}
       <li><a href="https://github.com/{{ site.github_username }}" class="icon style3 fab fa-github"><span class="label">GitHub</span></a></li>
       {% endif %}
