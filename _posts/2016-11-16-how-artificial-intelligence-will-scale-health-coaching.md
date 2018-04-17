@@ -2,7 +2,7 @@
 author: stevo
 comments: false
 date: 2016-11-16 09:00:00+00:00
-excerpt: Most health coaching will be handled by artificial intelligence in the next five years. Here's how we think it will go down.
+excerpt: Most health coaching will be handled by artificial intelligence in the next five years.
 layout: post
 title: "How Artificial Intelligence Will Scale Health Coaching"
 categories:

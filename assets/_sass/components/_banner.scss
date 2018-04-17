@@ -240,7 +240,7 @@
 							@include vendor('transition', 'opacity #{$y} ease-in-out');
 							img {
 								@include vendor('transition', 'opacity #{$y} ease-in-out');
-							} 
+							}
 						}
 
 						#{$x} {

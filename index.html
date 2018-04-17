@@ -54,7 +54,8 @@ title: Steven M. Ledbetter
 
 				<section id="mission" class="spotlight style5">
 					<div class="content">
-						<h2><span class="small">Making Stuff with</span><br /> Motivation Science</h2>
+						<h4 >Making stuff with</h4>
+						<h2 >Motivation Science</h2>
 						<p class="major">Steven M. Ledbetter, aka "Stevo" or "Coach Stevo" is an expert in the science of human behavior change. He has built sucessful companies, products, and services that have helped thousands of people change their lives.</p>
 						<div id="flask"><div class="flask-icon"><simple-svg data-icon="fa-flask" data-width="3.25rem"></simple-svg></div>
 						<div class="bubble b0"></div>
@@ -131,7 +132,7 @@ title: Steven M. Ledbetter
 											<div class="content">
 												<ul class="alt linkroll">
 													{% for post in site.posts limit:site.front-page-posts %}
-												<li><a href="{{ post.link }}"><h4><span>{{ post.title }}</span><span>{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</span></h4></a></li>
+												<li><a href="{{ post.link }}"><h4><span>{{ post.title }}</span><span class="small">{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</span></h4></a></li>
 												{% endfor %}
 												</ul>
 											</div>

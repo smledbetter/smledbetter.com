@@ -2,7 +2,7 @@
 author: stevo
 comments: false
 date: 2016-11-16 12:00:00+00:00
-excerpt: Health and fitness coaching will soon be handled by artificial intelligence, but how does health coaching scale now?
+excerpt: How can we scale health coaching to more people now?
 layout: post
 title: "AI is cool, but how do I scale health coaching now?"
 categories:

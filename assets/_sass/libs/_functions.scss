@@ -39,3 +39,13 @@
 @function _ease($keys...) {
 	@return val($ease, $keys...);
 }
+
+// rvr stands for responsive vertical rhythm
+@function rvr($multiple) {
+  @return calc(#{$baseline} * #{$multiple} * 1rem);
+}
+
+// vr stands for vertical rhythm
+@function vr($multiple) {
+  @return $baseline * $multiple * 1rem;
+}

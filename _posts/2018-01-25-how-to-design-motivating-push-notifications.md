@@ -2,7 +2,7 @@
 author: stevo
 comments: false
 date: 2018-01-25 09:00:00+00:00
-excerpt: Why some push notifications make people quit apps, why others work, and 8 useful guidelines for improving your push notifications.
+excerpt: Why some push notifications make people quit apps and why others work.
 layout: post
 title: "How to Design Motivating Push Notifications"
 categories:

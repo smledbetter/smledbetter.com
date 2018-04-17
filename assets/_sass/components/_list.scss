@@ -9,7 +9,8 @@
 	ol {
 		list-style: decimal;
 		margin: 0 0 _size(element-margin) 0;
-		padding-left: 1.25rem;
+		padding-left: rvr(1);
+		padding-left: vr(1);
 
 		li {
 			padding-left: 0.25rem;
@@ -18,7 +19,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 rvr(1) 0;
 		padding-left: 1rem;
 
 		li {
