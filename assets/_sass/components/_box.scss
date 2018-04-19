@@ -9,8 +9,10 @@
 	.box {
 		border-radius: _size(border-radius);
 		border: solid _size(border-width);
-		margin-bottom: _size(element-margin);
-		padding: 1.5rem;
+		margin-bottom: rvr(1);
+		margin-bottom: vr(1);
+		padding: rvr(1);
+		padding: vr(1);
 
 		> :last-child,
 		> :last-child > :last-child,

@@ -16,6 +16,34 @@ p.major {
   font-size: 1.15rem;
 }
 
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+
+ul {
+  list-style-position: inside;
+    padding: 0;
+}
+
+li {
+left: -.75rem;
+
+  & span {
+        padding-right: 1rem;
+        
+      & i {
+      font-size: .5rem;
+    }
+  }
+}
+
+
 // Banner
 
 .arrow > a {
