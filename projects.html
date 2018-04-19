@@ -1,0 +1,95 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<!-- One -->
+<section id="social" class="banner style6 fullscreen orient-left content-align-right image-position-bottom onload-image-fade-in onload-content-fade-in">
+  <div class="content">
+    <h2>Stevo's Work</h2>
+    <p class="major">Here's the stuff without NDAs.</p>
+    <ul class="icons">
+      <li><a href="#work" class="icon style3 fas fa-mobile-alt smooth-scroll"><span class="label">Products</span></a></li>
+      <li><a href="#writing" class="icon style3 fas fa-pencil-alt smooth-scroll"><span class="label">Writing</span></a></li>
+    </ul>
+    <div class="arrow"><a href="#work" class="smooth-scroll"><img width="15%" src="{{ site.url }}/images/np_down-arrow_761740_000000.svg"></a></div>
+  </div>
+  <div class="image stevo">
+    <img src="{{ site.url }}/images/motivate_toronto-8.jpg" alt="" />
+  </div>
+</section>
+
+<!-- Three -->
+  <section id="work" class="wrapper style1 align-center">
+    <div class="inner">
+      <h2>Stuff Stevo has made</h2>
+      <div class="items style2 big onscroll-fade-in">
+          <section>
+            <span class="icon image major" style="display:inline-block;"><img src="images/circle-logo.png" width="20px" alt=""></span>
+            <h3>Habitry</h3>
+            <p>A consulting company using Practical Motivation Science to make more effective products.</p>
+            <ul class="actions vertical">
+                <li><a href="https://habitry.com" target=_blank class="button style4 icon">Visit the Company</a></li>
+              </ul>
+          </section>
+          <section>
+            <span class="icon style1 major fas fa-mobile-alt"></span>
+            <h3>Habitry iOS</h3>
+            <p>A cutting edge behavior change app for health coaches. Sold by Habitry from 2014-2016.</p>
+            <ul class="actions vertical">
+                <li><a href="/projects/habitry_ios" class="button style4 icon">See the Design Process</a></li>
+              </ul>
+          </section>
+        <section>
+          <span class="icon style1 major fas fa-graduation-cap"></span>
+          <h3>Habitry Professionals</h3>
+          <p>The first evidence-based, behavior change education platform for health coaches. Sold by Habitry in 2016.</p>
+          <ul class="actions vertical">
+              <li><a href="/projects/habitry_pros" class="button style4 icon">See the Design Process</a></li>
+            </ul>
+        </section>
+        <section>
+          <span class="icon style1 major fas fa-fas fa-columns"></span>
+          <h3><em>The Motivator</em></h3>
+          <p>An annual research review of behavioral psychology.<br/>Sold by Habitry in 2017.</p>
+          <ul class="actions vertical">
+              <li><a href="/projects/motivator" class="button style4 icon">See the Design Process</a></li>
+            </ul>
+        </section>
+        <section>
+          <span class="icon style1 major fas fa-book"></span>
+          <h3>We Make Communities</h3>
+          <p>A book for coaches who want to help the most people they can using the best in practical Motivation Science.</p>
+          <ul class="actions vertical">
+              <li><a href="http://habitry.com/learn#book" class="button style4 icon">Buy the Book</a></li>
+            </ul>
+        </section>
+      <section>
+        <span class="icon style1 major fas fa-microphone"></span>
+        <h3>the bettercast</h3>
+        <p>A podcast featuring real stories about people getting better at things.</p>
+        <ul class="actions vertical">
+            <li><a href="https://betterish.co/bettercast" target=_blank class="button style4 icon">Hear the Podcast</a></li>
+          </ul>
+      </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing -->
+  <section class="wrapper style1 align-center" id="writing">
+    <div class="inner medium">
+      <h2>Stuff Stevo has written lately</h2>
+          <div class="index align-center">
+            <section>
+              <div class="content">
+                <ul class="alt linkroll">
+                  {% for post in site.posts limit:site.front-page-posts %}
+                <li><a href="{{ post.link }}"><h4><span>{{ post.title }}</span><span class="small">{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</span></h4></a></li>
+                {% endfor %}
+                </ul>
+              </div>
+          </div>
+    </div>
+</section>
