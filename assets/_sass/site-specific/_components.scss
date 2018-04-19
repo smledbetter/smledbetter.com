@@ -10,6 +10,13 @@ h3 {
   font-weight: 300;
 }
 
+h5 {
+  text-transform: uppercase;
+  font-family: _font(family-display);
+  letter-spacing: .1rem;
+  font-weight: 400;
+}
+
 p.major {
   font-family: _font(family-display);
   font-weight: 300;
@@ -36,10 +43,30 @@ left: -.75rem;
 
   & span {
         padding-right: 1rem;
-        
+
       & i {
       font-size: .5rem;
     }
+  }
+}
+
+.content {
+  & span.amp {
+		font-family: _font(family);
+    font-size:4rem;
+    vertical-align: -8%;
+    padding:0 rvr(1);
+	@include text-gradient(-135deg, _palette(color5), _palette(color3));
+	@include vendor('transition', 'opacity #{_duration(on-load)} ease-in-out');
+		span {
+				padding: 0 0.109em;
+				margin: 0 -.109em;
+	@include text-gradient(-135deg, _palette(color5), _palette(color3));
+		}
+
+		&.is-inactive {
+			opacity: 0;
+		}
   }
 }
 
