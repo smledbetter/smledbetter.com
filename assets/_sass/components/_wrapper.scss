@@ -69,7 +69,7 @@
 
 	.wrapper.style2 {
 		padding: _size(padding, default);
-		background-color: _palette(bg-alt);
+		background-color: _palette(bg);
 
 		> .inner {
 			@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.5);
