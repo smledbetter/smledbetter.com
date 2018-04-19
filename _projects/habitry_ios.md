@@ -33,7 +33,7 @@ tags:
       <p class="major">The most effective and effecient way to help clients change their health behavior is in groups. But health coaches had no tools to bring high-touch to scale.</p>
     </div>
   </section> -->
-  <section id="approach" class="wrapper style1">
+  <section id="approach" class="wrapper style2">
     <div class="content">
       <h2>The Approach</h2>
       <p class="major">With no money and no specialists, <a href="https://habitry.com">Habitry</a> took a Lean UX approach to figuring out potential customer pain points, potential solutions, and how to measure the results. This meant front-loading a lot of hypothesis testing with rapid prototyping, customer interviews, and mockups.</p>
