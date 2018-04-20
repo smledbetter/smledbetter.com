@@ -35,6 +35,7 @@ ul {
 			display: inline-block;
 			-webkit-transition: .1s;
 			transition: 0.1s;
+			border-bottom: none;
 			&.is-active, &:hover {
 				/* color: #87c6bd; */
 			}
@@ -149,40 +150,6 @@ ul {
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
-	}
-}
-}
-
-@media (min-width: 768px) {
-.main-nav {
-	left: 0;
-	height: auto;
-
-	&:before {
-		height: 80px;
-	}
-	ul {
-		top: auto;
-		bottom: 0;
-		-webkit-transform: none;
-		-ms-transform: none;
-		transform: none;
-		li {
-			-webkit-transform: translateY(-100%);
-			-ms-transform: translateY(-100%);
-			transform: translateY(-100%);
-			display: inline-block;
-		}
-	}
-	&:hover {
-		ul li {
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-		}
-		&:before {
-			margin-top: 0;
-		}
 	}
 }
 }

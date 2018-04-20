@@ -1,7 +1,7 @@
 // This is js for the site smledbetter.com
 
 // nav
-(function() {
+ (function() {
     var header = document.querySelector(".main-nav-trigger");
 
     if(window.location.hash) {
@@ -19,3 +19,17 @@
     headroom.init();
 
 }());
+
+
+$('.main-nav-trigger').click(function(){
+
+  if($(this).hasClass('is-visible')) {
+  if ($(this).hasClass('is-closeable'))  {
+  $('.main-nav').removeClass('is-visible'),
+  $('.main-nav-trigger').removeClass('is-closeable');
+} else {
+  $('.main-nav').addClass('is-visible'),
+  $('.main-nav-trigger').addClass('is-closeable');
+}
+}
+});

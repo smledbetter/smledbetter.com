@@ -78,18 +78,19 @@
 			<div id="wrapper" class="divided">
 
 
+
   <!-- Menu -->
   <!-- Nav -->
 <nav class="main-nav">
   <ul>
-  <li><a href="/">Home</a></li>
+  <li><h4><a href="/">Home</a></h4></li>
     
-  <li><a href="/bio">Bio</a></li>
+  <li><h4><a href="/bio">Bio</a></h4></li>
   
-  <li><a href="/contact">Contact</a></li>
+  <li><h4><a href="/contact">Contact</a></h4></li>
   
   </ul>
-<a href="#" class="main-nav-trigger is-visible">
+<a href="#" class="main-nav-trigger">
   <i class="icon icon--burger"></i>
 </a>
 </nav>
@@ -154,7 +155,6 @@
 <!-- site specific scripts -->
 <script src="/assets/js/headroom.js"></script>
 <script src="/assets/js/smledbetter.js"></script>
-<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
 
 
 <!-- On Page Scripts -->
@@ -193,21 +193,6 @@ enter: function() {
 })
 });
 })(jQuery);
-</script>
-<script>
-// init Isotope
-var $grid = $('.tiles').isotope({
-  // options
-});
-// filter items on button click
-$('.filter-button-group').on( 'click', 'a', function() {
-  var filterValue = $(this).attr('data-filter');
-  $grid.isotope({ filter: filterValue });
-});
-$('.button-group a.button').on('click', function(){
-	$('.button-group a.button').removeClass('active');
-	$(this).addClass('active');
-});
 </script>
 
 

@@ -1,12 +1,12 @@
 <!-- Nav -->
 <nav class="main-nav">
   <ul>
-  <li><a href="/">Home</a></li>
+  <li><h4><a href="/">Home</a></h4></li>
     {% for item in site.data.nav %}
-  <li><a href="{{ item.path }}">{{ item.title }}</a></li>
+  <li><h4><a href="{{ item.path }}">{{ item.title }}</a></h4></li>
   {% endfor %}
   </ul>
-<a href="#" class="main-nav-trigger is-visible">
+<a href="#" class="main-nav-trigger">
   <i class="icon icon--burger"></i>
 </a>
 </nav>
