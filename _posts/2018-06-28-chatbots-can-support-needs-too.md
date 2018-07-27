@@ -8,5 +8,5 @@ title: "Chatbots Can Support Needs, Too"
 categories:
 - Practical Motivation Science
 tags: [technology, theory, motivation science, SDT, chatbots]
-link: https:https://medium.com/practical-motivation-science/chatbots-can-support-needs-too-6ecfbc762547
+link: https://medium.com/practical-motivation-science/chatbots-can-support-needs-too-6ecfbc762547
 ---
