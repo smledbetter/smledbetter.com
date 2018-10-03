@@ -5,5 +5,8 @@
 - title: Résumé
   path: /resume
 
+- title: Work
+  path: /projects
+
 - title: Contact
   path: /contact

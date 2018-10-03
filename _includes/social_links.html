@@ -1,5 +1,8 @@
 <div class="social-icons">
   <div class="social-icons-right">
+    {% if site.keybase_username %}
+    <li><a href="https://keybase.com/{{ site.twitter_username }}" class="icon style3 fab fa-keybase"><span class="label">Keybase</span></a></li>
+    {% endif %}
     {% if site.github_username %}
       <a class="fa fa-github" href="https://github.com/{{ site.github_username }}"></a>
     {% endif %}
