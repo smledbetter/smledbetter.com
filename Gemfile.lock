@@ -45,10 +45,11 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux-musl
 
 DEPENDENCIES
-  jekyll (= 3.6.3)
+  jekyll
   jekyll-sitemap
 
 BUNDLED WITH
-   1.15.4
+   2.2.3
