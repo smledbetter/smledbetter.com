@@ -17,18 +17,16 @@
       "image": "{% if page.share-image %}{{ page.share-image | prepend: site.url }}{% else %}{{ site.share-image | prepend: site.url }}{% endif %}",
       "sameAs": [
         "https://github.com/{{ site.github_username }}",
-        "https://twitter.com/{{ site.twitter_username }}",
-        "https://angel.co/{{ site.angellist_username }}",
         "https://medium.com/@{{ site.medium_id }}",
         "https://instagram.com/{{ site.instagram_username }}",
         "https://linkedin.com/in/{{ site.linkedin_username }}",
-        "https://keybase.com/{{ site.keybase_username }}"
+        "https://keybase.io/{{ site.keybase_username }}"
 
       ],
-      "jobTitle": "CEO",
+      "jobTitle": "Product Manager",
       "worksFor": {
         "@type": "Organization",
-        "name": "Habitry"
+        "name": "Meta"
       }
     }
     </script>
@@ -48,16 +46,10 @@
     <meta property="og:url" content="{% if page.permalink %}{{ page.permalink | prepend: site.url }}{% else %}{{ site.url }}{% endif %}">
     <meta property="og:image" content="{% if page.share-image %}{{ page.share-image | prepend: site.url }}{% else %}{{ site.share-image | prepend: site.url }}{% endif %}">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="{{ site.twitter_username }}">
-    <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:image" content="{% if page.share-image %}{{ page.share-image | prepend: site.url }}{% else %}{{ site.share-image | prepend: site.url }}{% endif %}">
+
 
     <!-- icons -->
-    <script src="//code.simplesvg.com/1/1.0.0-beta5/simple-svg.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2f96537798.js" crossorigin="anonymous"></script>
     <!-- stylesheets -->
     <link rel="stylesheet" href="{{ "/assets/css/main.css " | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">

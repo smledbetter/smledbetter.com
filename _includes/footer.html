@@ -1,49 +1,12 @@
 <footer class="wrapper style1 align-center">
   <div class="inner">
-    <ul class="icons">
-      {% if site.keybase_username %}
-      <li><a href="https://keybase.com/{{ site.keybase_username }}" class="icon style3 fab fa-keybase"><span class="label">Keybase</span></a></li>
-      {% endif %}
-      {% if site.twitter_username %}
-      <li><a href="https://twitter.com/{{ site.twitter_username }}" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
-      {% endif %}
-      {% if site.facebook_URL %}
-      <li><a href="{{ site.facebook_URL }}" class="icon style3 fab fa-facebook"><span class="label">Facebook</span></a></li>
-      {% endif %}
-      {% if site.instagram_username %}
-      <li><a href="https://www.instagram.com/{{ site.instagram_username }}" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
-      {% endif %}
-      {% if site.dribbble_username %}
-      <li><a href="#" class="icon style3 fab fa-dribbble"><span class="label">Dribbble</span></a></li>
-      {% endif %}
-      {% if site.goodreads_username %}
-      <li><a href="https://goodreads.com/{{ site.goodreads_username }}" class="icon style3 fab fa-goodreads-g"><span class="label">Goodreads</span></a></li>
-      {% endif %}
-      {% if site.github_username %}
-      <li><a href="https://github.com/{{ site.github_username }}" class="icon style3 fab fa-github"><span class="label">GitHub</span></a></li>
-      {% endif %}
-      {% if site.angellist_username %}
-      <li><a href="https://angel.co/{{ site.github_username }}" class="icon style3 fab fa-angellist"><span class="label">GitHub</span></a></li>
-      {% endif %}
-      {% if site.medium_id %}
-      <li><a href="https://medium.com/@{{ site.medium_id }}" class="icon style3 fab fa-medium"><span class="label">Medium</span></a></li>
-      {% endif %}
-      {% if site.500px_username %}
-      <li><a href="#" class="icon style3 fab fa-500px"><span class="label">500px</span></a></li>
-      {% endif %}
-      {% if site.phone %}
-      <li><a href="tel:{{site.phone}}" class="icon style3 far fa-phone"><span class="label">Phone</span></a></li>
-      {% endif %}
-      {% if site.email %}
-      <li><a href="mailto:{{ site.email }}" class="icon style3 far fa-envelope"><span class="label">Email</span></a></li>
-      {% endif %}
-    </ul>
+    {% include social_links.html %}
     <div itemscope itemtype="http://schema.org/Person">
-  My name is <span itemprop="name">Steven M. Ledbetter</span>
-  <span itemprop="jobTitle">(CEO)</span><br>
+  My name is <span itemprop="givenName">Steven</span> M. <span itemprop="familyName">Ledbetter</span><br>
+  I'm a <span itemprop="hasOccupation">{{site.admin_title}}</span> at <span itemprop="worksFor"></span>{{site.admin_company}}</span></span> <br>
   <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-      I live in <span itemprop="addressLocality">Emeryville</span>,
-      <span itemprop="addressRegion">CA</span>
+      I live in <span itemprop="addressLocality">{{site.admin_city}}</span>,
+      <span itemprop="addressRegion">{{site.admin_state}}</span>
   </div>
 </div>
   </div>

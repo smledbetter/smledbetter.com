@@ -2,11 +2,11 @@
 - title: Bio
   path: /bio
 
-- title: Résumé
-  path: /resume
+##- title: Résumé
+##  path: /resume
 
-- title: Work
-  path: /projects
+## - title: Work
+##  path: /projects
 
 - title: Contact
   path: /contact

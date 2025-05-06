@@ -7,49 +7,12 @@ title: Steven M. Ledbetter
 					<section id="social" class="banner style6 fullscreen orient-center content-align-left image-position-bottom onload-image-fade-in onload-content-fade-in">
 						<div class="content">
 							<h1>Stevo</h1>
-							<h3>Product Leader specializing in customer psychology and engagement.</h3>
-							<ul class="icons">
-								{% if site.keybase_username %}
-								<li><a href="https://keybase.com/{{ site.keybase_username }}" class="icon style3 fab fa-keybase"><span class="label">Keybase</span></a></li>
-								{% endif %}
-								{% if site.twitter_username %}
-								<li><a href="https://twitter.com/{{ site.twitter_username }}" class="icon style3 fab fa-twitter"><span class="label">Twitter</span></a></li>
-								{% endif %}
-								{% if site.facebook_URL %}
-								<li><a href="{{ site.facebook_URL }}" class="icon style3 fab fa-facebook"><span class="label">Facebook</span></a></li>
-								{% endif %}
-								{% if site.instagram_username %}
-								<li><a href="https://www.instagram.com/{{ site.instagram_username }}" class="icon style3 fab fa-instagram"><span class="label">Instagram</span></a></li>
-								{% endif %}
-								{% if site.dribbble_username %}
-								<li><a href="#" class="icon style3 fab fa-dribbble"><span class="label">Dribbble</span></a></li>
-								{% endif %}
-								{% if site.goodreads_username %}
-								<li><a href="https://goodreads.com/{{ site.goodreads_username }}" class="icon style3 fab fa-goodreads-g"><span class="label">Goodreads</span></a></li>
-								{% endif %}
-								{% if site.github_username %}
-								<li><a href="https://github.com/{{ site.github_username }}" class="icon style3 fab fa-github"><span class="label">GitHub</span></a></li>
-								{% endif %}
-								{% if site.angellist_username %}
-								<li><a href="https://angel.co/{{ site.github_username }}" class="icon style3 fab fa-angellist"><span class="label">GitHub</span></a></li>
-								{% endif %}
-								{% if site.medium_id %}
-								<li><a href="https://medium.com/@{{ site.medium_id }}" class="icon style3 fab fa-medium"><span class="label">Medium</span></a></li>
-								{% endif %}
-								{% if site.500px_username %}
-								<li><a href="#" class="icon style3 fab fa-500px"><span class="label">500px</span></a></li>
-								{% endif %}
-								{% if site.phone %}
-								<li><a href="tel:{{site.phone}}" class="icon style3 far fa-phone"><span class="label">Phone</span></a></li>
-								{% endif %}
-								{% if site.email %}
-								<li><a href="mailto:{{ site.email }}" class="icon style3 far fa-envelope"><span class="label">Email</span></a></li>
-								{% endif %}
-							</ul>
+							<h3>Product Manager, writer, and occasional stregnth coach.</h3>
+							{% include social_links.html %}
 							<div class="arrow"><a href="#mission" class="smooth-scroll"><img width="15%" src="images/np_down-arrow_761740_000000.svg"></a></div>
 						</div>
 						<div class="image stevo">
-							<img src="images/boom-stevo-min.jpg" alt="" />
+							<img src="images/stevo-winter-min.jpg" alt="" />
 						</div>
 					</section>
 
@@ -57,10 +20,13 @@ title: Steven M. Ledbetter
 
 				<section id="mission" class="spotlight style5">
 					<div class="content">
-						<h4>Making stuff with</h4>
-						<h2>Motivation Science</h2>
-						<p class="major">Steven M. Ledbetter, aka <q>Stevo</q> or <q>Coach Stevo</q> is an expert in the science of human behavior change. He has built sucessful companies, products, and services that have helped thousands of people change their lives.</p>
-						<div id="flask"><div class="flask-icon"><simple-svg data-icon="fa-flask" data-width="3.25rem"></simple-svg></div>
+						<!-- <h4>Making stuff with</h4> -->
+						<h2>The <q>Product Therapist</q></h2>
+						<p class="major">Stevo earned his nickname the <q>Product Therapist</q> by applying the 1,200 hours of supervised counseling skills training from his MA in Psychology to better understanding users... and the people that make products for them.</p>
+						<div>
+							<h2><span class="icon style1 fas fa-couch"></span></h2>
+						</div>
+						<!-- <div id="flask"><div class="flask-icon"><svg xmlns="http://www.w3.org/2000/svg" width="3.25rem" viewBox="0 0 640 512"><path fill="currentColor" d="M155.6 17.3C163 3 179.9-3.6 195 1.9l125 45.6L445 1.9c15.1-5.5 32 1.1 39.4 15.4l78.8 152.9c28.8 55.8 10.3 122.3-38.5 156.6l31.4 86.2l41-15c16.6-6 35 2.5 41 19.1s-2.5 35-19.1 41L547.9 484l-71.1 26c-16.6 6.1-35-2.5-41-19.1s2.5-35 19.1-41l41-15l-31.3-86.2c-59.4 5.2-116.2-34-130-95.2L320 188.8l-14.6 64.7c-13.8 61.3-70.6 100.4-130 95.2l-31.3 86.2l41 15c16.6 6 25.2 24.4 19.1 41s-24.4 25.2-41 19.1l-71-25.9l-71.1-25.9c-16.6-6.1-25.2-24.4-19.1-41s24.4-25.2 41-19.1l41 15l31.3-86.2C66.5 292.5 48.1 226 76.9 170.2zm44 54.4l-27.2 52.8l89.2 32.5l13.1-57.9zm240.9 0l-75.1 27.4l13.1 57.9l89.2-32.5z"/></svg></div>
 						<div class="bubble b0"></div>
 						<div class="bubble b1"></div>
 						<div class="bubble b2"></div>
@@ -71,7 +37,7 @@ title: Steven M. Ledbetter
 						<div class="bubble b7"></div>
 						<div class="bubble b8"></div>
 						<div class="bubble b9"></div>
-					</div>
+					</div> -->
 					</div>
 				</section>
 
@@ -81,22 +47,38 @@ title: Steven M. Ledbetter
 							<h2>Stuff Stevo has made</h2>
 							<div class="items style2 big onscroll-fade-in">
 									<section>
-									<span class="icon image major" style="display:inline-block;"><img src="images/circle-logo.png" width="20px" alt=""></span>
-										<h3>Habitry</h3>
-										<p>A consulting company using Practical Motivation Science to make more effective products.</p>
+									<span class="icon image major" style="display:inline-block;"><img src="images/sn-logo.png" width="20px" alt=""></span>
+										<h3>Supernatural</h3>
+										<p>An award-winning Virtual Reality fitness app for Quest. Thousands of workouts loved by millions.</p>
 										<ul class="actions vertical">
-												<li><a href="https://habitry.com" target=_blank class="button style4 icon">Visit the Company</a></li>
+											<li><a href="https://getsupernatural.com" target=_blank class="button style4 icon">Acquired by Meta</a></li>
+										</ul>
+									</section>
+									<section>
+										<span class="icon image major" style="display:inline-block;"><img src="images/elevate-logo.png" width="20px" alt=""></span>
+											<h3>Elevate Security</h3>
+											<p>An integrated human risk platform that prevents threats targeting human error within organizations.</p>
+											<ul class="actions vertical">
+												<li><a href="https://elevatesecurity.com" target=_blank class="button style4 icon">Acquired by Mimecast</a></li>
 											</ul>
 									</section>
 									<section>
-										<span class="icon style1 major fas fa-mobile-alt"></span>
-										<h3>Habitry iOS</h3>
-										<p>A cutting edge behavior change app for health coaches. Sold by Habitry from 2014-2016.</p>
-										<ul class="actions vertical">
-												<li><a href="/projects/habitry_ios" class="button style4 icon">See the Design Process</a></li>
+										<span class="icon image major" style="display:inline-block;"><img src="images/tonal-logo.png" width="20px" alt=""></span>
+											<h3>Tonal</h3>
+											<p>The ultimate at-home strength training system. Innovative hardware, firmware, software, and content.</p>
+											<ul class="actions vertical">
+												<li><a href="https://tonal.com" target=_blank class="button style4 icon">Visit the Company</a></li>
 											</ul>
 									</section>
-								<section>
+									<section>
+										<span class="icon image major" style="display:inline-block;"><img src="images/circle-logo.png" width="20px" alt=""></span>
+										<h3>Habitry</h3>
+										<p>A cutting edge behavior change app for coaches, then health product consultancy.</p>
+										<ul class="actions vertical">
+												<li><a href="/projects/habitry_ios" class="button style4 icon">Sold in 2019</a></li>
+											</ul>
+									</section>
+								<!-- <section>
 									<span class="icon style1 major fas fa-graduation-cap"></span>
 									<h3>Habitry Professionals</h3>
 									<p>The first evidence-based, behavior change education platform for health coaches. Sold by Habitry in 2016.</p>
@@ -127,8 +109,7 @@ title: Steven M. Ledbetter
 				        <ul class="actions vertical">
 				            <li><a href="https://thebettercast.com" target=_blank class="button style4 icon">Hear the Podcast</a></li>
 				          </ul>
-				      </section>
-						</a>
+				      </section> -->
 							</div>
 						</div>
 					</section>

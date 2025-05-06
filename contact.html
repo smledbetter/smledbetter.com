@@ -9,11 +9,13 @@ title: Contact
 					<h2>Stevo's Contact Info</h2>
 					<p class="major">How to get in touch.</p>
 					<ul class="icons">
-						<li><a href="/assets/stevo.vcf" class="icon style3 fas fa-id-card"><span class="label">Address Card</span></a></li>
 						{% if site.admin_email %}
 						<li><a href="mailto:{{ site.admin_email}}?subject=I think you're awesome!" class="icon style3 fas fa-envelope"><span class="label">Email</span></a></li>
 						{% endif %}
-						<li><a href="https://calendly.com/coachstevo" class="icon style3 fas fa-phone" target=_blank><span class="label">Phone</span></a></li>
+						<li><a href="https://calendly.com/{{site.calendly}}" class="icon style3 fas fa-phone" target=_blank><span class="label">Phone</span></a></li>
+						{% if site.signal_username %}
+						<li><a href="#messaging" class="smooth-scroll icon style3 fab fa-signal-messenger"><span class="label">Signal</span></a></li>
+						{% endif %}
 					</ul>
 					<div class="arrow"><a href="#expectations" class="smooth-scroll"><img width="15%" src="images/np_down-arrow_761740_000000.svg"></a></div>
 				</div>
@@ -37,12 +39,11 @@ title: Contact
 				</header>
 				<div class="content">
 
-					<h4><code>smledbetter@pm.me</code></h4>
+					<h4><code>{{ site.admin_email}}</code></h4>
 					<p>I have push notifications set up on my personal email accounts. I respond to emails that are <a href="http://five.sentenc.es/" target=_blank>five sentences or less</a> as soon as I have a free moment. Anything longer, I bucket into a folder that is checked and responded to in the morning and afternoon.</p>
 					<div class="box">
 					<h5 style="text-transform:uppercase"><span class="icon style1 fas fa-lock" style="padding-right:1em;"></span>Encryption</h5>
-					<p>Use my <a href="https://keybase.io/smledbetter" target=_blank>public key</a>, email me from a <a href="https://protonmail.com" target=_blank>Proton Mail</a> account, or hit me on <a href="https://signal.org/" target=_blank>Signal</a>.</p>
-					<p>If none of that made any sense to you, write the message you only want me to see in <a href="https://keybase.io/encrypt#smledbetter" target=-_blank>this form</a>, copy and paste what it spits out into the body of an email, then <a href="mailto:{{ site.admin_email}}?subject=I'm encrypted!">send it to me</a>.</p>
+					<p>Use my <a href="https://keybase.io/encrypt#{{site.keybase_username}}">public key</a>, email me from a <a href="https://protonmail.com" target=_blank>Proton Mail</a> account, or hit me on <a href="https://signal.org/" target=_blank>Signal</a>.</p>
 				</div>
 				</div>
 			</section>
@@ -55,20 +56,20 @@ title: Contact
 				</header>
 				<div class="content">
 
-					<a class="button style4 icon" href="https://calendly.com/smledbetter" target=_blank>Schedule a Phone Call</a>
+					<a class="button style4 icon" href="https://calendly.com/{{site.calendly}}" target=_blank>Schedule a Phone Call</a>
 					<p>If you want to talk about something that doesn't fit into a five-sentence email, feel free to schedule a phone call. I keep my calendar up-to-date, so all you have to do is pick a convenient time.</p>
 
 				</div>
 			</section>
 
-			<!-- Facebook  -->
+			<!-- Messaging  -->
 
-			<section id="facebook">
+			<section id="messaging">
 				<header>
-					<h3><span class="icon style1 fab fa-facebook" style="padding-right:1em;"></span>Facebook</h3>
+					<h3><span class="icon style1 fab fa-signal-messenger" style="padding-right:1em;"></span>Messaging</h3>
 				</header>
 				<div class="content">
-					<p>I have not logged into Facebook since 2016. If you message me there, I will never know. Please <a href="mailto:{{ site.admin_email}}?subject=Facebook Sucks">email me</a> instead.</p>
+					<p>My <a href="https://signal.org/" target=_blank>Signal</a> username is <code>{{ site.signal_username}}</code> I do not check Facebook or Instagram messages from unknown senders. If you message me there, I will never know.</p>
 				</div>
 			</section>
 

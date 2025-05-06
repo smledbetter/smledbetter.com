@@ -7,14 +7,15 @@ url:         "https://smledbetter.com"
 date_format: "%b %-d, %Y"
 share-image: "/images/share.png"
 admin:      "Steven M. Ledbetter"
-admin_alias: "Coach Stevo"
+admin_alias: "Stevo"
 admin_email:    "smledbetter@pm.me"
-admin_title: "Behavior Change Nerd"
-admin_twitter: "thecoachstevo"
+admin_title: "Product Manager"
+admin_company: "Meta"
+admin_twitter: 
 admin_image: "boom-stevo-bw.jpg"
 admin_bio: "Helping people who know what to do, but can't make themselves do it since 2008."
-admin_city: "Emeryville"
-admin_state: "CA"
+admin_city: "Sharon"
+admin_state: "CT"
 
 
 # Collections
@@ -58,23 +59,22 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: smledbetter
+keybase_username: smledbetter
 facebook_URL:
+instagram_username: stevo_actually
+goodreads_username:
+github_username: smledbetter 
+medium_id: stevo_actually
 bitbucket_username:
 stackoverflow_id:
-twitter_username: thecoachstevo
-skype_username: smledbetter
-steam_nickname:
-google_plus_id:
-linkedin_username: smledbetter
-angellist_username: smledbetter
-medium_id: coach_stevo
-bitcoin_:
-paypal_:
-flattr_button:
-instagram_username: thecoachstevo
-keybase_username: smledbetter
-goodreads_username:
+twitter_username: 
+linkedin_username: smledbetter 
+
+# Communication Channels
+signal_username: stevo101
+whatsapp_username: 
+calendly: smledbetter
+email: smledbetter@pm.me
 
 # Post sharing icons
 show_sharing_icons: false
